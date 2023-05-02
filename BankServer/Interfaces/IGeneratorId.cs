@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BankServer.Models
+namespace BankServer.Interfaces
 {
-    public abstract class BaseModel
+    public interface IGeneratorId
     {
-        public decimal Id { get; set; }
+        public decimal Next();
+        public decimal Current();
     }
 }

@@ -16,7 +16,7 @@ namespace BankServer.Services
             return $"{user.Id}//{user.Name}//{user.Password}";
         }
 
-        public int GetUserId(UserModel user)
+        public decimal GetUserId(UserModel user)
         {
             return user.Id;
         }

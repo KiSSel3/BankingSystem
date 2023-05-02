@@ -13,6 +13,6 @@ namespace BankServer.Interfaces
         public string GetFullInformation(UserModel user);
         public string GetUserName(UserModel user);
         public string GetUserPassword(UserModel user);
-        public int GetUserId(UserModel user);
+        public decimal GetUserId(UserModel user);
     }
 }

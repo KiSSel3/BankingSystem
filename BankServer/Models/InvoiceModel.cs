@@ -17,7 +17,7 @@ namespace BankServer.Models
             InvoiceUser = new();
         }
 
-        public InvoiceModel(UserModel invoiceUser, int id, string number, decimal balanse = 0)
+        public InvoiceModel(UserModel invoiceUser, decimal id, string number, decimal balanse = 0)
         {
             Id = id;
             Number = number;

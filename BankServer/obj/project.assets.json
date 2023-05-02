@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\ThirdCourse\\temporarily\\BankingSystem\\BankServer\\BankServer.csproj",
+      "projectUniqueName": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\BankServer\\BankServer.csproj",
       "projectName": "BankServer",
-      "projectPath": "D:\\Programming\\ThirdCourse\\temporarily\\BankingSystem\\BankServer\\BankServer.csproj",
+      "projectPath": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\BankServer\\BankServer.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\ThirdCourse\\temporarily\\BankingSystem\\BankServer\\obj\\",
+      "outputPath": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\BankServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
