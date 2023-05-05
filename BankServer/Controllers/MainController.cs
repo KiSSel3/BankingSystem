@@ -45,9 +45,6 @@ namespace BankServer.Controllers
             this.generatorTransactionId = generatorTransactionId;
         }
 
-        public void AddUser(string name, string password)
-        {
 
-        }
     }
 }

@@ -10,10 +10,6 @@ namespace BankServer.Interfaces
 {
     public interface ITransactionService
     {
-        /*int id, InvoiceModel recipient, InvoiceModel sender, decimal amount*/
         public TransactionModel Transaction(decimal id, InvoiceModel recipient, InvoiceModel sender, decimal amount);
-
-
-
     }
 }
