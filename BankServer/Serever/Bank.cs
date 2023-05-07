@@ -1,4 +1,8 @@
-﻿using System;
+﻿using BankServer.Interfaces;
+using BankServer.Listeners;
+using BankServer.Models;
+using BankServer.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,21 +12,45 @@ namespace BankServer.Serever
 {
     public class Bank
     {
-        //Listeners
+        //Repositorys || В будущем будут заменены на базу данных
+        private IRepository<UserModel> users;
+        private IRepository<InvoiceModel> invoices;
 
-        public Bank()
+        //Services    || Выполняют основную логику
+        private IUserService userService;
+        private IInvoiceService invoiceService;
+        private ITransactionService transactionService;
+        private IRegistrationService registrationService;
+
+        //Listeners   || Прослушивают определённые порты
+        UserListener userListener;
+        RegistrationListener registrationListener;
+
+        public Bank(IRepository<UserModel> _users, IRepository<InvoiceModel> _invoices,
+            IUserService _userService, IInvoiceService _invoiceService, ITransactionService _transactionService,
+            IRegistrationService _registrationService)
         {
+            users = _users;
+            invoices = _invoices;
+            userService = _userService;
+            invoiceService = _invoiceService;
+            transactionService = _transactionService;
+            registrationService = _registrationService;
 
+            userListener = new UserListener(8080, users, userService);
+            registrationListener = new RegistrationListener(8081, users, registrationService);
         }
 
         public void Start()
         {
-            throw new NotImplementedException();
+            userListener.Start();
+            registrationListener.Start();
         }
 
         public void Stop()
         {
-            throw new NotImplementedException();
+            userListener.Stop();
+            registrationListener.Stop();
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using BankServer.Models;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace BankServer.Interfaces
 {
-    public interface IRepository<Model> where Model : BaseModel 
+    public interface IRegistrationService
     {
-        public List<Model> GetAll();
-        public Model Add(Model model);
-        public Model Delete(int id);
+        public bool IsNewName(IRepository<UserModel> users, string name);
+        public void AddUser(IRepository<UserModel> users, UserModel user);
     }
 }

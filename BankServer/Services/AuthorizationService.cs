@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BankServer.Interfaces
+namespace BankServer.Services
 {
-    public interface IMainController
+    public class AuthorizationService
     {
-
     }
 }

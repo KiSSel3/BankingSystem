@@ -26,11 +26,6 @@ namespace BankServer.Repository
             return toDelete;
         }
 
-        public Model Get(int id)
-        {
-            return models.FirstOrDefault(item => item.Id == id);
-        }
-
         public List<Model> GetAll()
         {
             return models;

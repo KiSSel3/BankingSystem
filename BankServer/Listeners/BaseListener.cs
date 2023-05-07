@@ -1,12 +1,16 @@
 ﻿using System.Net;
 using System.Net.Sockets;
+using System.Text;
 
 namespace BankServer.Listeners
 {
     public abstract class BaseListener
     {
         private readonly TcpListener listener;
-        private readonly CancellationTokenSource cancellationTokenSource; 
+        private readonly CancellationTokenSource cancellationTokenSource;
+
+        protected NetworkStream? stream = default(NetworkStream);
+        protected string request = default(string);
 
         public BaseListener(int port)
         {
@@ -42,5 +46,23 @@ namespace BankServer.Listeners
         }
 
         protected abstract Task HandleClientAsync(TcpClient client);
+
+        protected void GetRequest()
+        {
+            if (stream is null)
+                return;
+
+            List<byte> buffer = new();
+            int byteRead = stream.ReadByte();
+
+            while (byteRead != '\n' && byteRead != -1)
+            {
+                buffer.Add((byte)byteRead);
+
+                byteRead = stream.ReadByte();
+            }
+
+            request = Encoding.UTF8.GetString(buffer.ToArray());
+        }
     }
 }
