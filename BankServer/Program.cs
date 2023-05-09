@@ -7,7 +7,7 @@ public class Program
 {
     private static void Main(string[] args)
     {
-        Bank newBank = new Bank(new Repository<UserModel>(), new Repository<InvoiceModel>(), new UserService(), new InvoiceService(), new TransactionService(), new RegistrationService());
+        Bank newBank = new Bank(new Repository<UserModel>(), new Repository<InvoiceModel>(), new UserService(), new InvoiceService(), new TransactionService(), new RegistrationService(), new AuthorizationService());
 
         newBank.Start();
 

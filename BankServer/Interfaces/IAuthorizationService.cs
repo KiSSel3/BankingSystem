@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankServer.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace BankServer.Interfaces
 {
     public interface IAuthorizationService
     {
-
+        public bool IsUserRegistered(IRepository<UserModel> users, UserModel user);
     }
 }

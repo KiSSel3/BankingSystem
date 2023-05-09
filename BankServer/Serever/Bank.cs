@@ -21,14 +21,16 @@ namespace BankServer.Serever
         private IInvoiceService invoiceService;
         private ITransactionService transactionService;
         private IRegistrationService registrationService;
+        private IAuthorizationService authorizationService;
 
         //Listeners   || Прослушивают определённые порты
         UserListener userListener;
         RegistrationListener registrationListener;
+        AuthorizationListener authorizationListener;
 
         public Bank(IRepository<UserModel> _users, IRepository<InvoiceModel> _invoices,
             IUserService _userService, IInvoiceService _invoiceService, ITransactionService _transactionService,
-            IRegistrationService _registrationService)
+            IRegistrationService _registrationService, IAuthorizationService _authorizationService)
         {
             users = _users;
             invoices = _invoices;
@@ -36,21 +38,25 @@ namespace BankServer.Serever
             invoiceService = _invoiceService;
             transactionService = _transactionService;
             registrationService = _registrationService;
+            authorizationService = _authorizationService;
 
             userListener = new UserListener(8080, users, userService);
             registrationListener = new RegistrationListener(8081, users, registrationService);
+            authorizationListener = new AuthorizationListener(8082, users, _authorizationService);
         }
 
         public void Start()
         {
             userListener.Start();
             registrationListener.Start();
+            authorizationListener.Start();
         }
 
         public void Stop()
         {
             userListener.Stop();
             registrationListener.Stop();
+            authorizationListener.Stop();
         }
     }
 }
