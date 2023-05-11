@@ -10,9 +10,7 @@ namespace BankServer.Interfaces
 {
     public interface IUserService
     {
-        public string GetFullInformation(UserModel user);
-        public string GetUserName(UserModel user);
-        public string GetUserPassword(UserModel user);
-        public decimal GetUserId(UserModel user);
+        public UserModel GetUser(IRepository<UserModel> users, string name);
+        public UserModel GetUser(IRepository<UserModel> users, int id);
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.Net;
+﻿using BankServer.Interfaces;
+
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
@@ -12,10 +14,14 @@ namespace BankServer.Listeners
         protected NetworkStream? stream = default(NetworkStream);
         protected string request = default(string);
 
-        public BaseListener(int port)
+        protected IEncoderService encoderService;
+
+        public BaseListener(int port, IEncoderService _encoderService)
         {
+            encoderService = _encoderService;
+
             listener = new TcpListener(IPAddress.Any, port);
-            cancellationTokenSource = new CancellationTokenSource();
+            cancellationTokenSource = new CancellationTokenSource();   
         }
 
         public int Port()
@@ -62,7 +68,16 @@ namespace BankServer.Listeners
                 byteRead = stream.ReadByte();
             }
 
-            request = Encoding.UTF8.GetString(buffer.ToArray());
+            request = encoderService.Decrypt(Encoding.UTF8.GetString(buffer.ToArray()),"1-1-08Key8For8Encrypt80-1-1");
         }
+
+        protected async Task SendingMesageAsync(string message)
+        {
+            if (stream is null)
+                return;
+
+            message = encoderService.Encript(message, "1-1-08Key8For8Encrypt80-1-1");
+            await stream.WriteAsync(Encoding.UTF8.GetBytes(message + "\n"));
+        } 
     }
 }

@@ -33,5 +33,20 @@ namespace BankServer.Models
         public InvoiceModel Recipient { get; set; }
         public decimal Amount { get; set; }
         public DateTime Time { get; set; }
+
+        public override bool Equals(object? obj)
+        {
+            if(obj is TransactionModel transactionModel)
+            {
+                return (Sender.Equals(transactionModel.Sender)) && (Recipient.Equals(transactionModel.Recipient)) && (Amount.Equals(transactionModel.Amount)) && (Time.Equals(transactionModel.Time));
+            }
+
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Sender.GetHashCode() + Recipient.GetHashCode() + Amount.GetHashCode() + Time.GetHashCode();
+        }
     }
 }

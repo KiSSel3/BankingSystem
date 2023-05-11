@@ -1,4 +1,5 @@
-﻿using BankServer.Interfaces;
+﻿using BankSerializer;
+using BankServer.Interfaces;
 using BankServer.Models;
 
 using System;
@@ -14,31 +15,44 @@ namespace BankServer.Listeners
     {
         private IRepository<UserModel> users;
         private IAuthorizationService authorizationService;
+        private IUserService userService;
 
-        public AuthorizationListener(int port, IRepository<UserModel> _users, IAuthorizationService _authorizationService) : base(port)
+        private Serializer bankSerializer;
+        public AuthorizationListener(int port, IEncoderService encoderService, IRepository<UserModel> _users, IAuthorizationService _authorizationService, IUserService _userService) : base(port, encoderService)
         {
             users = _users;
             authorizationService = _authorizationService;
+            userService = _userService;
+
+            bankSerializer = new();
         }
 
         protected override async Task HandleClientAsync(TcpClient client)
         {
             using (client)
             {
+                string[] userData;
+
                 stream = client.GetStream();
 
-                GetRequest();
+                while(true)
+                {
+                    GetRequest();
 
-                //Временно || В дальнейшем приходить будет сериализованный класс
-                var bufList = request.Split("||");
-                if(authorizationService.IsUserRegistered(users, new UserModel(1, bufList[0], bufList[1])))
-                {
-                    await stream.WriteAsync(Encoding.UTF8.GetBytes("true\n"));
+                    userData = request.Split("||");
+                    if (authorizationService.IsUserRegistered(users, userData[0], userData[1]))
+                    {
+                        await SendingMesageAsync("true");
+                        break;
+                    }
+                    else
+                    {
+                        await SendingMesageAsync("false");
+                    }
                 }
-                else
-                {
-                    await stream.WriteAsync(Encoding.UTF8.GetBytes("false\n"));
-                } 
+
+                var currentUser = userService.GetUser(users, userData[0]);
+                await SendingMesageAsync(bankSerializer.SerializeJSON<UserModel>(currentUser));
 
                 stream = null;
             }

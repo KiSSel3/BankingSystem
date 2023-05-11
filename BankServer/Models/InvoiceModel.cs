@@ -7,6 +7,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace BankServer.Models
 {
+    [Serializable]
     public class InvoiceModel : BaseModel
     {
         public InvoiceModel()
@@ -28,5 +29,20 @@ namespace BankServer.Models
         public string Number { get; set; }
         public decimal Balanse { get; set; }
         public UserModel InvoiceUser { get; set; }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj is InvoiceModel invoiceModel)
+            {
+                return Number == invoiceModel.Number;
+            }
+
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Number.GetHashCode();
+        }
     }
 }

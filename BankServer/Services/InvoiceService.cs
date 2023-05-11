@@ -12,24 +12,14 @@ namespace BankServer.Services
 {
     public class InvoiceService : IInvoiceService
     {
-        public IEnumerable<InvoiceModel> GetAllUserInvoice(UserModel user, IEnumerable<InvoiceModel> allInvoices)
+        public void AddInvoice(IRepository<InvoiceModel> invoices, InvoiceModel invoice)
         {
-            return allInvoices.Where(item => item.InvoiceUser == user);
+            invoices.Add(invoice);
         }
 
-        public decimal GetInvoiceBalance(InvoiceModel invoice)
+        public IEnumerable<InvoiceModel> GetAllUserInvoice(IRepository<InvoiceModel> invoices, UserModel user)
         {
-            return invoice.Balanse;
-        }
-
-        public string GetInvoiceNumber(InvoiceModel invoice)
-        {
-            return invoice.Number;
-        }
-
-        public UserModel GetInvoiceUser(InvoiceModel invoice)
-        {
-            return invoice.InvoiceUser;
+            return invoices.GetAll().Where(item => item.InvoiceUser.Equals(user));
         }
     }
 }

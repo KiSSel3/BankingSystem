@@ -10,10 +10,9 @@ namespace BankServer.Interfaces
 {
     public interface IInvoiceService
     {
-        public IEnumerable<InvoiceModel> GetAllUserInvoice(UserModel user, IEnumerable<InvoiceModel> allInvoices);
-        public string GetInvoiceNumber(InvoiceModel invoice);
-        public decimal GetInvoiceBalance(InvoiceModel invoice);
-        public UserModel GetInvoiceUser(InvoiceModel invoice);
+        public IEnumerable<InvoiceModel> GetAllUserInvoice(IRepository<InvoiceModel> invoices, UserModel user);
+
+        public void AddInvoice(IRepository<InvoiceModel> invoices, InvoiceModel invoice);
 
     }
 }

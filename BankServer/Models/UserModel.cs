@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankServer.Models
 {
+    [Serializable]
     public class UserModel : BaseModel
     {
         public UserModel()
@@ -24,5 +25,20 @@ namespace BankServer.Models
 
         public string Name { get; set; }
         public string Password { get; set; }
+
+        public override bool Equals(object? obj)
+        {
+            if(obj is UserModel userModel)
+            {
+                return Name == userModel.Name;
+            }
+
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Name.GetHashCode();
+        }
     }
 }

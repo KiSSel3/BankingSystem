@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="BankSerializer">
+      <HintPath>..\..\Serializer\BankSerializer\BankSerializer\bin\Debug\net7.0\BankSerializer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+	
 </Project>

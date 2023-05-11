@@ -6,29 +6,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace BankServer.Services
 {
     public class UserService : IUserService
     {
-        public string GetFullInformation(UserModel user)
+        public UserModel GetUser(IRepository<UserModel> users, string name)
         {
-            return $"{user.Id}//{user.Name}//{user.Password}";
+            return users.GetAll().First(item => item.Name == name);
         }
 
-        public decimal GetUserId(UserModel user)
+        public UserModel GetUser(IRepository<UserModel> users, int id)
         {
-            return user.Id;
-        }
-
-        public string GetUserName(UserModel user)
-        {
-            return user.Name;
-        }
-
-        public string GetUserPassword(UserModel user)
-        {
-            return user.Password;
+            return users.GetAll().First(item => item.Id == id);
         }
     }
 }

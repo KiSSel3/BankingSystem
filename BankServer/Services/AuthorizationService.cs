@@ -10,9 +10,9 @@ namespace BankServer.Services
 {
     public class AuthorizationService : IAuthorizationService
     {
-        public bool IsUserRegistered(IRepository<UserModel> users, UserModel user)
+        public bool IsUserRegistered(IRepository<UserModel> users, string userName, string userPassword)
         {
-            return users.GetAll().Any(item => item.Name == user.Name && item.Password == user.Password);
+            return users.GetAll().Any(item => item.Name == userName && item.Password == userName);
         }
     }
 }

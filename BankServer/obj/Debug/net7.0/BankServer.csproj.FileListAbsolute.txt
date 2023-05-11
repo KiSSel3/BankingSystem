@@ -28,3 +28,6 @@ D:\Programming\ThirdCourse\OOP\BankingSystem\BankServer\obj\Debug\net7.0\refint\
 D:\Programming\ThirdCourse\OOP\BankingSystem\BankServer\obj\Debug\net7.0\BankServer.pdb
 D:\Programming\ThirdCourse\OOP\BankingSystem\BankServer\obj\Debug\net7.0\BankServer.genruntimeconfig.cache
 D:\Programming\ThirdCourse\OOP\BankingSystem\BankServer\obj\Debug\net7.0\ref\BankServer.dll
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankServer\bin\Debug\net7.0\BankSerializer.dll
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankServer\obj\Debug\net7.0\BankServer.csproj.CopyComplete
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankServer\bin\Debug\net7.0\BankSerializer.pdb

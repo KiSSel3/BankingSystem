@@ -10,7 +10,7 @@ namespace BankServer.Generators
 {
     public class BaseGeneratorId : IGeneratorId
     {
-        private decimal currentId;
+        private decimal currentId = 0;
 
         public decimal Next()
         {
