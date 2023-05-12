@@ -10,14 +10,14 @@ namespace BankServer.Generators
 {
     public class BaseGeneratorId : IGeneratorId
     {
-        private decimal currentId = 0;
+        private ulong currentId = 0;
 
-        public decimal Next()
+        public ulong Next()
         {
             return ++currentId;
         }
 
-        public decimal Current()
+        public ulong Current()
         {
             return currentId;
         }

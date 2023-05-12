@@ -12,6 +12,6 @@ namespace BankServer.Interfaces
     {
         public List<Model> GetAll();
         public Model Add(Model model);
-        public Model Delete(int id);
+        public Model Delete(ulong id);
     }
 }

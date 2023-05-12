@@ -8,6 +8,6 @@ namespace BankServer.Models
 {
     public abstract class BaseModel
     {
-        public decimal Id { get; set; }
+        public ulong Id { get; set; }
     }
 }

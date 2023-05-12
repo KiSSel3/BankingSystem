@@ -75,6 +75,7 @@ namespace BankServer.Serever
             userListener.Start();
             registrationListener.Start();
             authorizationListener.Start();
+            invoiceListener.Start();
         }
 
         public void Stop()
@@ -82,6 +83,7 @@ namespace BankServer.Serever
             userListener.Stop();
             registrationListener.Stop();
             authorizationListener.Stop();
+            invoiceListener.Stop();
         }
     }
 }

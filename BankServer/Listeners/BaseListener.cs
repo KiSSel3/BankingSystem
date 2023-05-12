@@ -61,10 +61,15 @@ namespace BankServer.Listeners
             List<byte> buffer = new();
             int byteRead = stream.ReadByte();
 
-            while (byteRead != '\n' && byteRead != -1)
+            while (true)
             {
-                buffer.Add((byte)byteRead);
+                if (byteRead == -1 || (buffer.Count >= 3 && byteRead == (byte)'D' && buffer[buffer.Count - 1] == (byte)'N' && buffer[buffer.Count - 2] == (byte)'E'))
+                {
+                    buffer.RemoveRange(buffer.Count - 2, 2);
+                    break;
+                }
 
+                buffer.Add((byte)byteRead);
                 byteRead = stream.ReadByte();
             }
 
@@ -75,9 +80,19 @@ namespace BankServer.Listeners
         {
             if (stream is null)
                 return;
-
+            ///
+            ///Debug
+            await Console.Out.WriteLineAsync($"Сообщение: {message}");
+            ///Debug
+            ///
             message = encoderService.Encript(message, "1-1-08Key8For8Encrypt80-1-1");
-            await stream.WriteAsync(Encoding.UTF8.GetBytes(message + "\n"));
+
+            ///
+            ///Debug
+            await Console.Out.WriteLineAsync($"Поcле шифрования: {message}");
+            ///Debug
+            ///
+            await stream.WriteAsync(Encoding.UTF8.GetBytes(message + "END"));
         } 
     }
 }

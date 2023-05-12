@@ -19,7 +19,7 @@ namespace BankServer.Models
             Time = DateTime.Now;
         }
 
-        public TransactionModel(decimal id, InvoiceModel recipient, InvoiceModel sender, decimal amount)
+        public TransactionModel(ulong id, InvoiceModel recipient, InvoiceModel sender, decimal amount)
         {
             Id = id;
             Recipient = recipient;

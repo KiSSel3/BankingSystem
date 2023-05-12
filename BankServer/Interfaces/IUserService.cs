@@ -11,6 +11,6 @@ namespace BankServer.Interfaces
     public interface IUserService
     {
         public UserModel GetUser(IRepository<UserModel> users, string name);
-        public UserModel GetUser(IRepository<UserModel> users, int id);
+        public UserModel GetUser(IRepository<UserModel> users, ulong id);
     }
 }

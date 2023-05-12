@@ -19,7 +19,7 @@ namespace BankServer.Repository
             return model;
         }
 
-        public Model Delete(int id)
+        public Model Delete(ulong id)
         {
             var toDelete = models.FirstOrDefault(item => item.Id == id);
             models.Remove(toDelete);

@@ -17,7 +17,7 @@ namespace BankServer.Services
             return users.GetAll().First(item => item.Name == name);
         }
 
-        public UserModel GetUser(IRepository<UserModel> users, int id)
+        public UserModel GetUser(IRepository<UserModel> users, ulong id)
         {
             return users.GetAll().First(item => item.Id == id);
         }

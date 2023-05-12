@@ -17,6 +17,11 @@ namespace BankServer.Services
             invoices.Add(invoice);
         }
 
+        public InvoiceModel DeleteInvoice(IRepository<InvoiceModel> invoices, InvoiceModel invoice)
+        {
+            return invoices.Delete(invoice.Id);
+        }
+
         public IEnumerable<InvoiceModel> GetAllUserInvoice(IRepository<InvoiceModel> invoices, UserModel user)
         {
             return invoices.GetAll().Where(item => item.InvoiceUser.Equals(user));

@@ -12,7 +12,7 @@ namespace BankServer.Services
     {
         public bool IsUserRegistered(IRepository<UserModel> users, string userName, string userPassword)
         {
-            return users.GetAll().Any(item => item.Name == userName && item.Password == userName);
+            return users.GetAll().Any(item => item.Name == userName && item.Password == userPassword);
         }
     }
 }

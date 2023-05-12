@@ -14,5 +14,7 @@ namespace BankServer.Interfaces
 
         public void AddInvoice(IRepository<InvoiceModel> invoices, InvoiceModel invoice);
 
+        public InvoiceModel DeleteInvoice(IRepository<InvoiceModel> invoices, InvoiceModel invoice);
+
     }
 }

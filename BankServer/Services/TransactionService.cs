@@ -11,7 +11,7 @@ namespace BankServer.Services
 {
     public class TransactionService : ITransactionService
     {
-        public TransactionModel Transaction(decimal id, InvoiceModel recipient, InvoiceModel sender, decimal amount)
+        public TransactionModel Transaction(ulong id, InvoiceModel recipient, InvoiceModel sender, decimal amount)
         {
             recipient.Balanse -= amount;
             sender.Balanse += amount;

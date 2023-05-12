@@ -16,7 +16,7 @@ namespace BankServer.Models
             Password = "None";
         }
 
-        public UserModel(decimal id, string name, string password)
+        public UserModel(ulong id, string name, string password)
         {
             Id = id;
             Name = name;

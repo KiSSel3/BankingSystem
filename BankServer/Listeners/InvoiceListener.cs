@@ -39,9 +39,24 @@ namespace BankServer.Listeners
                 GetRequest();
                 var currentUser = bankSerializer.DeSerializeJSON<UserModel>(request);
 
-                invoiceService.AddInvoice(invoices, new InvoiceModel(currentUser, invoiceGeneratorId.Next(), generatorNumberInvoice.Next()));
+                GetRequest();
+                if(request == "add")
+                {
+                    invoiceService.AddInvoice(invoices, new InvoiceModel(currentUser, invoiceGeneratorId.Next(), generatorNumberInvoice.Next()));
+                }
+                
+                if(request == "delete")
+                {
+                    GetRequest();
+                    invoiceService.DeleteInvoice(invoices, bankSerializer.DeSerializeJSON<InvoiceModel>(request));
+                }
 
-                await SendingMesageAsync(bankSerializer.SerializeJSONList<InvoiceModel>(invoiceService.GetAllUserInvoice(invoices, currentUser)));
+                if(request == "show")
+                {
+                    await SendingMesageAsync(bankSerializer.SerializeJSONList<InvoiceModel>(invoiceService.GetAllUserInvoice(invoices, currentUser)));
+                }
+
+                stream = null;
             }
         }
     }

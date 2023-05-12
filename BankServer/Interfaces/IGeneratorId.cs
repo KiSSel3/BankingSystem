@@ -8,7 +8,7 @@ namespace BankServer.Interfaces
 {
     public interface IGeneratorId
     {
-        public decimal Next();
-        public decimal Current();
+        public ulong Next();
+        public ulong Current();
     }
 }
