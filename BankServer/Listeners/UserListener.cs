@@ -17,7 +17,7 @@ namespace BankServer.Listeners
         private IUserService userService;
         private IGeneratorId userGeneratorId;
 
-        private Serializer serializer;
+        private Serializer bankSerializer;
 
         public UserListener(int port, IEncoderService encoderService, IRepository<UserModel> _repository, IUserService _userService, IGeneratorId _userGeneratorId) : base(port, encoderService)
         {
@@ -25,7 +25,7 @@ namespace BankServer.Listeners
             userService = _userService;
             userGeneratorId = _userGeneratorId;
 
-            serializer = new();
+            bankSerializer = new();
         }
 
         protected override async Task HandleClientAsync(TcpClient client)
@@ -33,22 +33,22 @@ namespace BankServer.Listeners
             using (client)
             {
                 stream = client.GetStream();
-                try
+
+                GetRequest();
+                var currentUser = bankSerializer.DeSerializeJSON<UserModel>(request);
+
+                GetRequest();
+                if(request == "changePassword")
                 {
-
-
-                    //var serstr = serializer.SerializeJSONList<UserModel>(repository.GetAll());
-                    //var str = encoderService.Encript(serstr, "key");
-
-                    //await Console.Out.WriteLineAsync($"\nКоличество клиентво: {str}");
-
-                    
+                    GetRequest();
                 }
-                catch
+
+                if(request == "changeName")
                 {
-                   //await Console.Out.WriteLineAsync("Ошибка");
+                    GetRequest();
+                   // await SendingMesageAsync(bankSerializer.SerializeJSON<UserModel>())
                 }
-                
+
                 stream = null;
             }
         }
