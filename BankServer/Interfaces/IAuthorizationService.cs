@@ -1,15 +1,10 @@
 ﻿using BankServer.Models;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BankServer.Response;
 
 namespace BankServer.Interfaces
 {
     public interface IAuthorizationService
     {
-        public bool IsUserRegistered(IRepository<UserModel> users, string userName, string userPassword);
+        public Task<BaseResponse<UserModel>> Authorization(IUserRepository users, UserModel user);
     }
 }

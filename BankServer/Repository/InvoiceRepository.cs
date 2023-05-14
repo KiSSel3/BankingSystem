@@ -40,12 +40,12 @@ namespace BankServer.Repository
             }
         }
 
-        public async Task<InvoiceModel> GetById(ulong id)
+        public async Task<InvoiceModel?> GetById(ulong id)
         {
             return invoices.FirstOrDefault(item => item.Id == id);
         }
 
-        public async Task<InvoiceModel> GetByNumber(string number)
+        public async Task<InvoiceModel?> GetByNumber(string number)
         {
             return invoices.FirstOrDefault(item => item.Number == number);
         }

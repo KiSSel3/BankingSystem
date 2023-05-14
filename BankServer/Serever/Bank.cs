@@ -14,8 +14,8 @@ namespace BankServer.Serever
     public class Bank
     {
         //Repositorys || В будущем будут заменены на базу данных
-        private IRepository<UserModel> users;
-        private IRepository<InvoiceModel> invoices;
+        //private IRepository<UserModel> users;
+        //private IRepository<InvoiceModel> invoices;
 
         //Services    || Выполняют основную логику
         private IUserService userService;
@@ -25,8 +25,8 @@ namespace BankServer.Serever
         private IAuthorizationService authorizationService;
 
         //Listeners   || Прослушивают определённые порты
-        UserListener userListener;
-        InvoiceListener invoiceListener;
+        //UserListener userListener;
+        //InvoiceListener invoiceListener;
         RegistrationListener registrationListener;
         AuthorizationListener authorizationListener;
 
@@ -41,7 +41,7 @@ namespace BankServer.Serever
         //Encoder
         IEncoderService encoderService;
 
-        public Bank(IRepository<UserModel> _users, IRepository<InvoiceModel> _invoices,
+/*        public Bank(IRepository<UserModel> _users, IRepository<InvoiceModel> _invoices,
             IUserService _userService, IInvoiceService _invoiceService, ITransactionService _transactionService,
             IRegistrationService _registrationService, IAuthorizationService _authorizationService,
             IGeneratorId _userGeneratorId, IGeneratorId _invoiceGeneratorId, IGeneratorId _transactionGeneratorId, IEncoderService _encoderService,
@@ -68,22 +68,22 @@ namespace BankServer.Serever
             registrationListener = new RegistrationListener(8081, encoderService, users, registrationService, userGeneratorId);
             authorizationListener = new AuthorizationListener(8082, encoderService, users, authorizationService, userService);
             invoiceListener = new InvoiceListener(8083, encoderService, invoices, invoiceService, invoiceGeneratorId, generatorNumberInvoice);
-        }
+        }*/
 
         public void Start()
         {
-            userListener.Start();
+            //userListener.Start();
             registrationListener.Start();
             authorizationListener.Start();
-            invoiceListener.Start();
+            //invoiceListener.Start();
         }
 
         public void Stop()
         {
-            userListener.Stop();
+            //userListener.Stop();
             registrationListener.Stop();
             authorizationListener.Stop();
-            invoiceListener.Stop();
+            //invoiceListener.Stop();
         }
     }
 }

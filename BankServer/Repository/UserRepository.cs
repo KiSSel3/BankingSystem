@@ -34,12 +34,12 @@ namespace BankServer.Repository
             }
         }
 
-        public async Task<UserModel> GetById(ulong id)
+        public async Task<UserModel?> GetById(ulong id)
         {
             return users.FirstOrDefault(item => item.Id == id);
         }
 
-        public async Task<UserModel> GetByName(string name)
+        public async Task<UserModel?> GetByName(string name)
         {
             return users.FirstOrDefault(item => item.Name == name);
         }

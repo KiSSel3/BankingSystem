@@ -12,7 +12,7 @@ namespace BankServer.Interfaces
         public Task<bool> Create(Model item);
         public Task<Model> Update(Model item);
         public Task<bool> Delete(Model item);
-        public Task<Model> GetById(ulong id);
+        public Task<Model?> GetById(ulong id);
         public Task<List<Model>> Select();
     }
 }

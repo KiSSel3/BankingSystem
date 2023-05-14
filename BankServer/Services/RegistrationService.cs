@@ -1,5 +1,6 @@
 ﻿using BankServer.Interfaces;
 using BankServer.Models;
+using BankServer.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +11,26 @@ namespace BankServer.Services
 {
     public class RegistrationService : IRegistrationService
     {
-        public void AddUser(IRepository<UserModel> users, UserModel user)
+        public async Task<BaseResponse<UserModel>> Registration(IUserRepository users, UserModel user, IGeneratorId generatorId)
         {
-            users.Add(user);
-        }
+            try
+            {
+                var wantedUser = users.GetByName(user.Name);
 
-        public bool IsNewName(IRepository<UserModel> users, string name)
-        {
-            return !users.GetAll().Any(item => item.Name == name);
+                if (wantedUser is null)
+                {
+                    user.Id = generatorId.Next();
+                    await users.Create(user);
+
+                    return new BaseResponse<UserModel>(true, user);
+                }
+
+                return new BaseResponse<UserModel>(false, null);
+            }
+            catch
+            {
+                return new BaseResponse<UserModel>(false, null);
+            }
         }
     }
 }

@@ -40,7 +40,7 @@ namespace BankServer.Repository
             }
         }
 
-        public async Task<TransactionModel> GetById(ulong id)
+        public async Task<TransactionModel?> GetById(ulong id)
         {
             return transactions.FirstOrDefault(item => item.Id == id);
         }

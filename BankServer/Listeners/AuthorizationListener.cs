@@ -1,7 +1,9 @@
 ﻿using BankSerializer;
 using BankServer.Interfaces;
 using BankServer.Models;
-
+using BankServer.Request;
+using BankServer.Response;
+using BankServer.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,48 +15,49 @@ namespace BankServer.Listeners
 {
     public class AuthorizationListener : BaseListener
     {
-        private IRepository<UserModel> users;
+        private IUserRepository users;
         private IAuthorizationService authorizationService;
         private IUserService userService;
 
-        private Serializer bankSerializer;
-        public AuthorizationListener(int port, IEncoderService encoderService, IRepository<UserModel> _users, IAuthorizationService _authorizationService, IUserService _userService) : base(port, encoderService)
+        public AuthorizationListener(int port, IEncoderService encoderService, IUserRepository _users, IAuthorizationService _authorizationService, IUserService _userService) : base(port, encoderService)
         {
             users = _users;
             authorizationService = _authorizationService;
             userService = _userService;
-
-            bankSerializer = new();
         }
 
         protected override async Task HandleClientAsync(TcpClient client)
         {
             using (client)
             {
-                string[] userData;
+                BaseResponse<UserModel> response;
 
                 stream = client.GetStream();
 
-                while(true)
+                try
                 {
-                    GetRequest();
+                    var request = bankSerializer.DeSerializeXML<BaseRequest<UserModel>>(GetRequest());
 
-                    userData = request.Split("||");
-                    if (authorizationService.IsUserRegistered(users, userData[0], userData[1]))
+                    if (request.Path == "authorization")
                     {
-                        await SendingMesageAsync("true");
-                        break;
+                        response = await authorizationService.Authorization(users, request.Data);
+                        await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<UserModel>>(response));
                     }
                     else
                     {
-                        await SendingMesageAsync("false");
+                        response = new BaseResponse<UserModel>(false, null);
+                        await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<UserModel>>(response));
                     }
                 }
-
-                var currentUser = userService.GetUser(users, userData[0]);
-                await SendingMesageAsync(bankSerializer.SerializeJSON<UserModel>(currentUser));
-
-                stream = null;
+                catch
+                {
+                    response = new BaseResponse<UserModel>(false, null);
+                    await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<UserModel>>(response));
+                }
+                finally
+                {
+                    stream = null;
+                }
             }
         }
     }

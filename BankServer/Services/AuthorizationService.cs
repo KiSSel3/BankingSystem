@@ -1,5 +1,6 @@
 ﻿using BankServer.Interfaces;
 using BankServer.Models;
+using BankServer.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,23 @@ namespace BankServer.Services
 {
     public class AuthorizationService : IAuthorizationService
     {
-        public bool IsUserRegistered(IRepository<UserModel> users, string userName, string userPassword)
+        public async Task<BaseResponse<UserModel>> Authorization(IUserRepository users, UserModel user)
         {
-            return users.GetAll().Any(item => item.Name == userName && item.Password == userPassword);
+            try
+            {
+                var wantedUser = await users.GetByName(user.Name);
+
+                if(wantedUser is not null && wantedUser.Password == user.Password)
+                {
+                    return new BaseResponse<UserModel>(true, wantedUser);
+                }
+
+                return new BaseResponse<UserModel>(false, null);
+            }
+            catch
+            {
+                return new BaseResponse<UserModel>(false, null);
+            }
         }
     }
 }

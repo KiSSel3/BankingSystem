@@ -10,6 +10,6 @@ namespace BankServer.Interfaces
 {
     public interface IUserRepository : IBaseRepository<UserModel>
     {
-        public Task<UserModel> GetByName(string name);
+        public Task<UserModel?> GetByName(string name);
     }
 }

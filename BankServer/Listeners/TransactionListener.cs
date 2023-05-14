@@ -1,4 +1,4 @@
-﻿using BankServer.Interfaces;
+﻿/*using BankServer.Interfaces;
 using BankServer.Models;
 using BankSerializer;
 
@@ -50,9 +50,10 @@ namespace BankServer.Listeners
             }
         }
 
-        /*        public InvoiceModel Sender { get; set; }
+        *//*        public InvoiceModel Sender { get; set; }
         public InvoiceModel Recipient { get; set; }
         public decimal Amount { get; set; }
-        public DateTime Time { get; set; }*/
+        public DateTime Time { get; set; }*//*
     }
 }
+*/

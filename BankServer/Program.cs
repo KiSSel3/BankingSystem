@@ -8,12 +8,12 @@ public class Program
 {
     private static void Main(string[] args)
     {
-        Bank newBank = new Bank(new Repository<UserModel>(), new Repository<InvoiceModel>(), new UserService(), new InvoiceService(), new TransactionService(), new RegistrationService(), new AuthorizationService(), new BaseGeneratorId(), new BaseGeneratorId(), new BaseGeneratorId(), new EncoderService(), new GeneratorNumberInvoice());
+        //Bank newBank = new Bank(new Repository<UserModel>(), new Repository<InvoiceModel>(), new UserService(), new InvoiceService(), new TransactionService(), new RegistrationService(), new AuthorizationService(), new BaseGeneratorId(), new BaseGeneratorId(), new BaseGeneratorId(), new EncoderService(), new GeneratorNumberInvoice());
 
-        newBank.Start();
+        //newBank.Start();
 
-        Console.ReadKey();
+        //Console.ReadKey();
 
-        newBank.Stop();
+        //newBank.Stop();
     }
 }

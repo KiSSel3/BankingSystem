@@ -1,4 +1,5 @@
-﻿using BankServer.Interfaces;
+﻿using BankSerializer;
+using BankServer.Interfaces;
 
 using System.Net;
 using System.Net.Sockets;
@@ -11,8 +12,9 @@ namespace BankServer.Listeners
         private readonly TcpListener listener;
         private readonly CancellationTokenSource cancellationTokenSource;
 
+        protected Serializer bankSerializer;
+
         protected NetworkStream? stream = default(NetworkStream);
-        protected string request = default(string);
 
         protected IEncoderService encoderService;
 
@@ -21,7 +23,9 @@ namespace BankServer.Listeners
             encoderService = _encoderService;
 
             listener = new TcpListener(IPAddress.Any, port);
-            cancellationTokenSource = new CancellationTokenSource();   
+            cancellationTokenSource = new CancellationTokenSource();
+
+            bankSerializer = new();
         }
 
         public int Port()
@@ -53,10 +57,10 @@ namespace BankServer.Listeners
 
         protected abstract Task HandleClientAsync(TcpClient client);
 
-        protected void GetRequest()
+        protected string GetRequest()
         {
             if (stream is null)
-                return;
+                return "";
 
             List<byte> buffer = new();
             int byteRead = stream.ReadByte();
@@ -73,7 +77,7 @@ namespace BankServer.Listeners
                 byteRead = stream.ReadByte();
             }
 
-            request = encoderService.Decrypt(Encoding.UTF8.GetString(buffer.ToArray()),"1-1-08Key8For8Encrypt80-1-1");
+            return encoderService.Decrypt(Encoding.UTF8.GetString(buffer.ToArray()),"1-1-08Key8For8Encrypt80-1-1");
         }
 
         protected async Task SendingMesageAsync(string message)
