@@ -80,18 +80,9 @@ namespace BankServer.Listeners
         {
             if (stream is null)
                 return;
-            ///
-            ///Debug
-            await Console.Out.WriteLineAsync($"Сообщение: {message}");
-            ///Debug
-            ///
+
             message = encoderService.Encript(message, "1-1-08Key8For8Encrypt80-1-1");
 
-            ///
-            ///Debug
-            await Console.Out.WriteLineAsync($"Поcле шифрования: {message}");
-            ///Debug
-            ///
             await stream.WriteAsync(Encoding.UTF8.GetBytes(message + "END"));
         } 
     }

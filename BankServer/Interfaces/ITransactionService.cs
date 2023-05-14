@@ -11,5 +11,7 @@ namespace BankServer.Interfaces
     public interface ITransactionService
     {
         public TransactionModel Transaction(ulong id, InvoiceModel recipient, InvoiceModel sender, decimal amount);
+        public bool IsInvoiceExist(IRepository<InvoiceModel> invoices, string number);
+        public InvoiceModel GetInvoice(IRepository<InvoiceModel> invoices, string number);
     }
 }
