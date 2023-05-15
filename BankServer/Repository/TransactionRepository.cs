@@ -12,7 +12,7 @@ namespace BankServer.Repository
     public class TransactionRepository : ITransactionRepository
     {
         //Временно лист
-        private List<TransactionModel> transactions;
+        private List<TransactionModel> transactions = new();
 
         public async Task<bool> Create(TransactionModel item)
         {
@@ -42,20 +42,20 @@ namespace BankServer.Repository
 
         public async Task<TransactionModel?> GetById(ulong id)
         {
-            return transactions.FirstOrDefault(item => item.Id == id);
+            return transactions.FirstOrDefault(item => item.Id == id, null);
         }
 
-        public async Task<List<TransactionModel>> GetByRecipient(InvoiceModel recipient)
+        public async Task<IEnumerable<TransactionModel>> GetByRecipient(InvoiceModel recipient)
         {
-            return (List<TransactionModel>) transactions.Where(item => item.Recipient == recipient);
+            return transactions.Where(item => item.Recipient == recipient);
         }
 
-        public async Task<List<TransactionModel>> GetBySender(InvoiceModel sender)
+        public async Task<IEnumerable<TransactionModel>> GetBySender(InvoiceModel sender)
         {
-            return (List<TransactionModel>)transactions.Where(item => item.Sender == sender);
+            return transactions.Where(item => item.Sender == sender);
         }
 
-        public async Task<List<TransactionModel>> Select()
+        public async Task<IEnumerable<TransactionModel>> Select()
         {
             return transactions;
         }

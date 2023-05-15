@@ -1,6 +1,6 @@
 ﻿using BankServer.Interfaces;
 using BankServer.Models;
-
+using BankServer.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,19 +12,42 @@ namespace BankServer.Services
 {
     public class InvoiceService : IInvoiceService
     {
-        public void AddInvoice(IRepository<InvoiceModel> invoices, InvoiceModel invoice)
+        public async Task<BaseResponse<IEnumerable<InvoiceModel>>> AddInvoice(IInvoiceRepository invoices, UserModel user, IGeneratorNumberInvoice generatorNumberInvoice, IGeneratorId generatorId)
         {
-            invoices.Add(invoice);
+            try
+            {
+                await invoices.Create(new InvoiceModel(user, generatorId.Next(), generatorNumberInvoice.Next()));
+                return new BaseResponse<IEnumerable<InvoiceModel>>(true, await invoices.GetByUser(user));
+            }
+            catch
+            {
+                return new BaseResponse<IEnumerable<InvoiceModel>>(false, null);
+            }
         }
 
-        public InvoiceModel DeleteInvoice(IRepository<InvoiceModel> invoices, InvoiceModel invoice)
+        public async Task<BaseResponse<IEnumerable<InvoiceModel>>> DeleteInvoice(IInvoiceRepository invoices, InvoiceModel invoice, UserModel user)
         {
-            return invoices.Delete(invoice.Id);
+            try
+            {
+                await invoices.Delete(invoice);
+                return new BaseResponse<IEnumerable<InvoiceModel>>(true, await invoices.GetByUser(user));
+            }
+            catch
+            {
+                return new BaseResponse<IEnumerable<InvoiceModel>>(false, null);
+            }
         }
 
-        public IEnumerable<InvoiceModel> GetAllUserInvoice(IRepository<InvoiceModel> invoices, UserModel user)
+        public async Task<BaseResponse<IEnumerable<InvoiceModel>>> GetUserInvoices(IInvoiceRepository invoices, UserModel user)
         {
-            return invoices.GetAll().Where(item => item.InvoiceUser.Equals(user));
+            try
+            {
+                return new BaseResponse<IEnumerable<InvoiceModel>>(true, await invoices.GetByUser(user));
+            }
+            catch
+            {
+                return new BaseResponse<IEnumerable<InvoiceModel>>(false, null);
+            }
         }
     }
 }

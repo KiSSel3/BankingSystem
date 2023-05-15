@@ -10,5 +10,6 @@ namespace BankServer.Interfaces
     public interface IInvoiceRepository : IBaseRepository<InvoiceModel>
     {
         public Task<InvoiceModel?> GetByNumber(string number);
+        public Task<IEnumerable<InvoiceModel>> GetByUser(UserModel user);
     }
 }

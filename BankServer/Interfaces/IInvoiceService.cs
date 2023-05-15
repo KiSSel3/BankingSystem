@@ -1,5 +1,5 @@
 ﻿using BankServer.Models;
-
+using BankServer.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +10,11 @@ namespace BankServer.Interfaces
 {
     public interface IInvoiceService
     {
-        public IEnumerable<InvoiceModel> GetAllUserInvoice(IRepository<InvoiceModel> invoices, UserModel user);
+        public Task<BaseResponse<IEnumerable<InvoiceModel>>> GetUserInvoices(IInvoiceRepository invoices, UserModel user);
 
-        public void AddInvoice(IRepository<InvoiceModel> invoices, InvoiceModel invoice);
+        public Task<BaseResponse<IEnumerable<InvoiceModel>>> AddInvoice(IInvoiceRepository invoices, UserModel user, IGeneratorNumberInvoice generatorNumberInvoice, IGeneratorId generatorId);
 
-        public InvoiceModel DeleteInvoice(IRepository<InvoiceModel> invoices, InvoiceModel invoice);
+        public Task<BaseResponse<IEnumerable<InvoiceModel>>> DeleteInvoice(IInvoiceRepository invoices, InvoiceModel invoice, UserModel user);
 
     }
 }

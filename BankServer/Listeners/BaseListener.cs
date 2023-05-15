@@ -76,7 +76,7 @@ namespace BankServer.Listeners
                 buffer.Add((byte)byteRead);
                 byteRead = stream.ReadByte();
             }
-
+            Console.WriteLine(encoderService.Decrypt(Encoding.UTF8.GetString(buffer.ToArray()), "1-1-08Key8For8Encrypt80-1-1"));
             return encoderService.Decrypt(Encoding.UTF8.GetString(buffer.ToArray()),"1-1-08Key8For8Encrypt80-1-1");
         }
 

@@ -1,4 +1,4 @@
-﻿using BankServer.Models;
+﻿/*using BankServer.Models;
 
 using System;
 using System.Collections.Generic;
@@ -14,3 +14,4 @@ namespace BankServer.Interfaces
         public UserModel GetUser(IRepository<UserModel> users, ulong id);
     }
 }
+*/

@@ -1,4 +1,5 @@
 ﻿using BankServer.Models;
+using BankServer.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,6 @@ namespace BankServer.Interfaces
 {
     public interface ITransactionService
     {
-        public TransactionModel Transaction(ulong id, InvoiceModel recipient, InvoiceModel sender, decimal amount);
-        public bool IsInvoiceExist(IRepository<InvoiceModel> invoices, string number);
-        public InvoiceModel GetInvoice(IRepository<InvoiceModel> invoices, string number);
+        public Task<BaseResponse<TransactionModel>> Transaction(ITransactionRepository transactions, IInvoiceRepository invoices, InvoiceModel sender, string numberRecipient, decimal amount, IGeneratorId generatorId);
     }
 }

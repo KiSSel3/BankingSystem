@@ -12,7 +12,7 @@ namespace BankServer.Repository
     public class InvoiceRepository : IInvoiceRepository
     {
         //Временно лист
-        private List<InvoiceModel> invoices;
+        private List<InvoiceModel> invoices = new();
 
         public async Task<bool> Create(InvoiceModel item)
         {
@@ -42,15 +42,20 @@ namespace BankServer.Repository
 
         public async Task<InvoiceModel?> GetById(ulong id)
         {
-            return invoices.FirstOrDefault(item => item.Id == id);
+            return invoices.FirstOrDefault(item => item.Id == id, null);
         }
 
         public async Task<InvoiceModel?> GetByNumber(string number)
         {
-            return invoices.FirstOrDefault(item => item.Number == number);
+            return invoices.FirstOrDefault(item => item.Number == number, null);
         }
 
-        public async Task<List<InvoiceModel>> Select()
+        public async Task<IEnumerable<InvoiceModel>> GetByUser(UserModel user)
+        {
+            return invoices.Where(item => item.InvoiceUser.Equals(user));
+        }
+
+        public async Task<IEnumerable<InvoiceModel>> Select()
         {
             return invoices;
         }

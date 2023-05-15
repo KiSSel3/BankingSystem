@@ -15,7 +15,7 @@ namespace BankServer.Services
         {
             try
             {
-                var wantedUser = users.GetByName(user.Name);
+                var wantedUser = await users.GetByName(user.Name);
 
                 if (wantedUser is null)
                 {

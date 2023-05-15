@@ -10,7 +10,7 @@ namespace BankServer.Interfaces
 {
     public interface ITransactionRepository : IBaseRepository<TransactionModel>
     {
-        public Task<List<TransactionModel>> GetBySender(InvoiceModel sender);
-        public Task<List<TransactionModel>> GetByRecipient(InvoiceModel recipient);
+        public Task<IEnumerable<TransactionModel>> GetBySender(InvoiceModel sender);
+        public Task<IEnumerable<TransactionModel>> GetByRecipient(InvoiceModel recipient);
     }
 }

@@ -1,6 +1,6 @@
 ﻿using BankServer.Interfaces;
 using BankServer.Models;
-
+using BankServer.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,22 +12,33 @@ namespace BankServer.Services
 {
     public class TransactionService : ITransactionService
     {
-        public InvoiceModel GetInvoice(IRepository<InvoiceModel> invoices, string number)
+        public async Task<BaseResponse<TransactionModel>> Transaction(ITransactionRepository transactions, IInvoiceRepository invoices, InvoiceModel sender, string numberRecipient, decimal amount, IGeneratorId generatorId)
         {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                var recipient = await invoices.GetByNumber(numberRecipient);
+                
+                if(recipient is not null)
+                {
+                    sender.Balanse -= amount;
+                    await invoices.Update(sender);
 
-        public bool IsInvoiceExist(IRepository<InvoiceModel> invoices, string number)
-        {
-            return invoices.GetAll().Any(item => item.Number == number);
-        }
+                    recipient.Balanse += amount;
+                    await invoices.Update(recipient);
 
-        public TransactionModel Transaction(ulong id, InvoiceModel recipient, InvoiceModel sender, decimal amount)
-        {
-            recipient.Balanse -= amount;
-            sender.Balanse += amount;
+                    var newTransaction = new TransactionModel(generatorId.Next(), recipient, sender, amount);
 
-            return new TransactionModel(id, recipient, sender, amount);
+                    await transactions.Create(newTransaction);
+
+                    return new BaseResponse<TransactionModel>(true, newTransaction);
+                }
+
+                return new BaseResponse<TransactionModel>(false, null);
+            }
+            catch
+            {
+                return new BaseResponse<TransactionModel>(false, null);
+            }
         }
     }
 }

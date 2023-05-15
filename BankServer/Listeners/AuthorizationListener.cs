@@ -17,13 +17,11 @@ namespace BankServer.Listeners
     {
         private IUserRepository users;
         private IAuthorizationService authorizationService;
-        private IUserService userService;
 
-        public AuthorizationListener(int port, IEncoderService encoderService, IUserRepository _users, IAuthorizationService _authorizationService, IUserService _userService) : base(port, encoderService)
+        public AuthorizationListener(int port, IEncoderService encoderService, IUserRepository _users, IAuthorizationService _authorizationService) : base(port, encoderService)
         {
             users = _users;
             authorizationService = _authorizationService;
-            userService = _userService;
         }
 
         protected override async Task HandleClientAsync(TcpClient client)
