@@ -2,6 +2,8 @@
 using BankServer.Models;
 using BankSerializer;
 using BankServer.Services;
+using BankServer.Response;
+using BankServer.Request;
 
 using System;
 using System.Collections.Generic;
@@ -9,8 +11,7 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-using BankServer.Response;
-using BankServer.Request;
+
 
 namespace BankServer.Listeners
 {
