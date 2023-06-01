@@ -7,11 +7,23 @@ using System.Threading.Tasks;
 
 namespace BankServer.Models
 {
+    [Serializable]
     public class TransactionModel : BaseModel
     {
+        //Поля
+        public InvoiceModel? Sender { get; set; }
+        public ulong SenderId { get; set; }
+
+        public InvoiceModel? Recipient { get; set; }
+        public ulong RecipientId { get; set; }
+
+        public decimal Amount { get; set; }
+        public DateTime Time { get; set; }
+
+
+        //Методы
         public TransactionModel()
         {
-            Id = 0;
             Recipient = null;
             Sender = null;
             Amount = 0;
@@ -19,20 +31,14 @@ namespace BankServer.Models
             Time = DateTime.Now;
         }
 
-        public TransactionModel(ulong id, InvoiceModel recipient, InvoiceModel sender, decimal amount)
+        public TransactionModel( InvoiceModel recipient, InvoiceModel sender, decimal amount)
         {
-            Id = id;
             Recipient = recipient;
             Sender = sender;
             Amount = amount;
 
             Time = DateTime.Now;
         }
-
-        public InvoiceModel Sender { get; set; }
-        public InvoiceModel Recipient { get; set; }
-        public decimal Amount { get; set; }
-        public DateTime Time { get; set; }
 
         public override bool Equals(object? obj)
         {

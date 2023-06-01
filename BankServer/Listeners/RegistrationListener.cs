@@ -10,13 +10,11 @@ namespace BankServer.Listeners
     public class RegistrationListener : BaseListener
     {
         private IUserRepository users;
-        private IGeneratorId userGeneratorId;
         private IRegistrationService registrationService;
 
-        public RegistrationListener(int port, IEncoderService encoderService, IUserRepository _users, IRegistrationService _registrationService, IGeneratorId _userGeneratorId) : base(port, encoderService)
+        public RegistrationListener(int port, IEncoderService encoderService, IUserRepository _users, IRegistrationService _registrationService) : base(port, encoderService)
         {
             users = _users;
-            userGeneratorId = _userGeneratorId;
             registrationService = _registrationService;
         }
 
@@ -34,7 +32,7 @@ namespace BankServer.Listeners
 
                     if (request.Path == "registration")
                     {
-                        response = await registrationService.Registration(users, request.Data, userGeneratorId);
+                        response = await registrationService.Registration(users, request.Data);
                         await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<UserModel>>(response));
                     }
                     else

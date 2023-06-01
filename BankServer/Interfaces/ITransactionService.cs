@@ -12,6 +12,6 @@ namespace BankServer.Interfaces
 {
     public interface ITransactionService
     {
-        public Task<BaseResponse<TransactionModel>> Transaction(ITransactionRepository transactions, IInvoiceRepository invoices, InvoiceModel sender, string numberRecipient, decimal amount, IGeneratorId generatorId);
+        public Task<BaseResponse<TransactionModel>> Transaction(ITransactionRepository transactions, IInvoiceRepository invoices, InvoiceModel sender, string numberRecipient, decimal amount);
     }
 }

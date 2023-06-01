@@ -31,21 +31,15 @@ namespace BankServer.Serever
         AuthorizationListener authorizationListener;
         TransactionListener transactionListener;
 
-        //GeneratorsId
-        IGeneratorId userGeneratorId;
-        IGeneratorId invoiceGeneratorId;
-        IGeneratorId transactionGeneratorId;
-
-        //Generator Number for invoice
-        IGeneratorNumberInvoice generatorNumberInvoice;
+        //Generator
+        IBaseGenerator baseGenerator;
 
         //Encoder
         IEncoderService encoderService;
 
         public Bank(IUserRepository _users, IInvoiceRepository _invoices, ITransactionRepository _transactions,
             IInvoiceService _invoiceService, ITransactionService _transactionService, IRegistrationService _registrationService, IAuthorizationService _authorizationService,
-            IGeneratorId _userGeneratorId, IGeneratorId _invoiceGeneratorId, IGeneratorId _transactionGeneratorId,
-            IGeneratorNumberInvoice _generatorNumberInvoice,
+            IBaseGenerator _baseGenerator,
             IEncoderService _encoderService)
         {
             users = _users;
@@ -57,18 +51,14 @@ namespace BankServer.Serever
             registrationService = _registrationService;
             authorizationService = _authorizationService;
 
-            userGeneratorId = _userGeneratorId;
-            invoiceGeneratorId = _invoiceGeneratorId;
-            transactionGeneratorId = _transactionGeneratorId;
-
-            generatorNumberInvoice = _generatorNumberInvoice;
+            baseGenerator = _baseGenerator;
 
             encoderService = _encoderService;
 
-            invoiceListener = new InvoiceListener(8080, encoderService, invoices, invoiceService, invoiceGeneratorId, generatorNumberInvoice);
-            registrationListener = new RegistrationListener(8081, encoderService, users, registrationService, userGeneratorId);
+            invoiceListener = new InvoiceListener(8080, encoderService, invoices, users, invoiceService, baseGenerator);
+            registrationListener = new RegistrationListener(8081, encoderService, users, registrationService);
             authorizationListener = new AuthorizationListener(8082, encoderService, users, authorizationService);
-            transactionListener = new TransactionListener(8083, encoderService, transactions, invoices, transactionService, transactionGeneratorId);
+            transactionListener = new TransactionListener(8083, encoderService, transactions, invoices, transactionService);
 
         }
 

@@ -9,26 +9,26 @@ namespace BankServer.Models
     [Serializable]
     public class UserModel : BaseModel
     {
+        //Поля
+        public string Name { get; set; }
+        public string Password { get; set; }
+
+        //Методы
         public UserModel()
         {
-            Id = 0;
             Name = "None";
             Password = "None";
         }
 
-        public UserModel(ulong id, string name, string password)
+        public UserModel(string name, string password)
         {
-            Id = id;
             Name = name;
             Password = password;
         }
 
-        public string Name { get; set; }
-        public string Password { get; set; }
-
         public override bool Equals(object? obj)
         {
-            if(obj is UserModel userModel)
+            if (obj is UserModel userModel)
             {
                 return Name == userModel.Name;
             }

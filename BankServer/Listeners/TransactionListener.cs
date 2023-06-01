@@ -20,16 +20,14 @@ namespace BankServer.Listeners
         private ITransactionRepository transactions;
         private IInvoiceRepository invoices;
         private ITransactionService transactionService;
-        private IGeneratorId transactionGeneratorId;
 
         public Serializer bankSerializer;
 
-        public TransactionListener(int port, IEncoderService encoderService, ITransactionRepository _transactions, IInvoiceRepository _invoices, ITransactionService _transactionService, IGeneratorId _transactionGeneratorId) : base(port, encoderService)
+        public TransactionListener(int port, IEncoderService encoderService, ITransactionRepository _transactions, IInvoiceRepository _invoices, ITransactionService _transactionService) : base(port, encoderService)
         {
             transactions = _transactions;
             invoices = _invoices;
             transactionService = _transactionService;
-            transactionGeneratorId = _transactionGeneratorId;
 
             bankSerializer = new();
         }
@@ -48,7 +46,7 @@ namespace BankServer.Listeners
 
                     if(request.Path == "transaction")
                     {
-                        response = await transactionService.Transaction(transactions, invoices, request.Data.Item1, request.Data.Item2, request.Data.Item3, transactionGeneratorId);
+                        response = await transactionService.Transaction(transactions, invoices, request.Data.Item1, request.Data.Item2, request.Data.Item3);
                         await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<TransactionModel>>(response));
                     }
                     else

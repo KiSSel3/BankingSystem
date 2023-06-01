@@ -18,8 +18,7 @@ public class Program
 
         Bank bank = new Bank(new UserRepository(dataBase), new InvoiceRepository(dataBase), new TransactionRepository(dataBase),
             new InvoiceService(), new TransactionService(), new RegistrationService(), new AuthorizationService(),
-            new BaseGeneratorId(), new BaseGeneratorId(), new BaseGeneratorId(),
-            new GeneratorNumberInvoice(),
+            new NumberGenerator(),
             new EncoderService());
 
         bank.Start();

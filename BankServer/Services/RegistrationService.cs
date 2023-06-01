@@ -12,7 +12,7 @@ namespace BankServer.Services
 {
     public class RegistrationService : IRegistrationService
     {
-        public async Task<BaseResponse<UserModel>> Registration(IUserRepository users, UserModel user, IGeneratorId generatorId)
+        public async Task<BaseResponse<UserModel>> Registration(IUserRepository users, UserModel user)
         {
             try
             {
@@ -20,7 +20,6 @@ namespace BankServer.Services
 
                 if (wantedUser is null)
                 {
-                    user.Id = generatorId.Next();
                     await users.Create(user);
 
                     return new BaseResponse<UserModel>(true, user);

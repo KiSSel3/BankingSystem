@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,25 +11,27 @@ namespace BankServer.Models
     [Serializable]
     public class InvoiceModel : BaseModel
     {
+        //Поля
+        public string Number { get; set; }
+        public decimal Balanse { get; set; }
+        public UserModel InvoiceUser { get; set; }
+
+        public ulong InvoiceUserId { get; set; }
+
+        //Методы
         public InvoiceModel()
         {
-            Id = 0;
             Number = "None";
             Balanse = 0;
             InvoiceUser = new();
         }
 
-        public InvoiceModel(UserModel invoiceUser, ulong id, string number, decimal balanse = 0)
+        public InvoiceModel(UserModel invoiceUser, string number, decimal balanse = 0)
         {
-            Id = id;
             Number = number;
             Balanse = balanse;
             InvoiceUser = invoiceUser;
         }
-
-        public string Number { get; set; }
-        public decimal Balanse { get; set; }
-        public UserModel InvoiceUser { get; set; }
 
         public override bool Equals(object? obj)
         {

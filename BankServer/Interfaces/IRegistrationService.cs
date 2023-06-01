@@ -5,6 +5,6 @@ namespace BankServer.Interfaces
 {
     public interface IRegistrationService
     {
-        public Task<BaseResponse<UserModel>> Registration(IUserRepository users, UserModel user, IGeneratorId generatorId);
+        public Task<BaseResponse<UserModel>> Registration(IUserRepository users, UserModel user);
     }
 }

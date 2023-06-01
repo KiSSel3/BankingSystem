@@ -13,7 +13,7 @@ namespace BankServer.Services
 {
     public class TransactionService : ITransactionService
     {
-        public async Task<BaseResponse<TransactionModel>> Transaction(ITransactionRepository transactions, IInvoiceRepository invoices, InvoiceModel sender, string numberRecipient, decimal amount, IGeneratorId generatorId)
+        public async Task<BaseResponse<TransactionModel>> Transaction(ITransactionRepository transactions, IInvoiceRepository invoices, InvoiceModel sender, string numberRecipient, decimal amount)
         {
             try
             {
@@ -27,7 +27,7 @@ namespace BankServer.Services
                     recipient.Balanse += amount;
                     await invoices.Update(recipient);
 
-                    var newTransaction = new TransactionModel(generatorId.Next(), recipient, sender, amount);
+                    var newTransaction = new TransactionModel(recipient, sender, amount);
 
                     await transactions.Create(newTransaction);
 

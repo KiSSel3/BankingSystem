@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace BankServer.Interfaces
 {
-    public interface IGeneratorId
+    public interface IBaseGenerator
     {
-        public ulong Next();
-        public ulong Current();
+        public string GetNextValue();
+        public string GetCurrentValue();
+        public void AddFreeItem(string item);
     }
 }

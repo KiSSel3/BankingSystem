@@ -13,11 +13,13 @@ namespace BankServer.Services
 {
     public class InvoiceService : IInvoiceService
     {
-        public async Task<BaseResponse<IEnumerable<InvoiceModel>>> AddInvoice(IInvoiceRepository invoices, UserModel user, IGeneratorNumberInvoice generatorNumberInvoice, IGeneratorId generatorId)
+        public async Task<BaseResponse<IEnumerable<InvoiceModel>>> AddInvoice(IInvoiceRepository invoices, IUserRepository users, UserModel user, IBaseGenerator numberGenerator)
         {
             try
             {
-                await invoices.Create(new InvoiceModel(user, generatorId.Next(), generatorNumberInvoice.Next()));
+                var dbUser = await users.GetById(user.Id);
+
+                await invoices.Create(new InvoiceModel(dbUser, numberGenerator.GetNextValue()));
                 return new BaseResponse<IEnumerable<InvoiceModel>>(true, await invoices.GetByUser(user));
             }
             catch
@@ -26,11 +28,16 @@ namespace BankServer.Services
             }
         }
 
-        public async Task<BaseResponse<IEnumerable<InvoiceModel>>> DeleteInvoice(IInvoiceRepository invoices, InvoiceModel invoice, UserModel user)
+        public async Task<BaseResponse<IEnumerable<InvoiceModel>>> DeleteInvoice(IInvoiceRepository invoices, InvoiceModel invoice, UserModel user, IBaseGenerator generatorNumberInvoice)
         {
             try
             {
-                await invoices.Delete(invoice);
+                var dbInvoice = await invoices.GetById(invoice.Id);
+
+                generatorNumberInvoice.AddFreeItem(invoice.Number);
+
+
+                await invoices.Delete(dbInvoice);
                 return new BaseResponse<IEnumerable<InvoiceModel>>(true, await invoices.GetByUser(user));
             }
             catch

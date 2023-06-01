@@ -1,23 +1,36 @@
 ﻿using BankServer.Models;
 using Microsoft.EntityFrameworkCore;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace BankServer.DataBase
 {
     public class AppDbContext : DbContext
     {
+        public DbSet<UserModel> Users { get; set; } = null!;
+        public DbSet<InvoiceModel> Invoices { get; set; } = null!;
+        public DbSet<TransactionModel> Transactions { get; set; } = null!;
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=Bank.db");
         }
 
-        public DbSet<UserModel> Users { get; set; } = null!;
-        public DbSet<InvoiceModel> Invoices { get; set; } = null!;
-        public DbSet<TransactionModel> Transactions { get; set; } = null!;
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<InvoiceModel>()
+                .HasOne<UserModel>(i => i.InvoiceUser)
+                .WithMany()
+                .HasForeignKey(i => i.InvoiceUserId);
+
+            modelBuilder.Entity<TransactionModel>()
+                .HasOne<InvoiceModel>(t => t.Sender)
+                .WithMany()
+                .HasForeignKey(t => t.SenderId);
+
+            modelBuilder.Entity<TransactionModel>()
+                .HasOne<InvoiceModel>(t => t.Recipient)
+                .WithMany()
+                .HasForeignKey(t => t.RecipientId);
+        }
+
     }
 }

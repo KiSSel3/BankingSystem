@@ -11,18 +11,18 @@ namespace BankServer.Listeners
     public class InvoiceListener : BaseListener
     {
         private IInvoiceRepository invoices;
+        private IUserRepository users;
         private IInvoiceService invoiceService;
-        private IGeneratorId invoiceGeneratorId;
-        private IGeneratorNumberInvoice generatorNumberInvoice;
+        private IBaseGenerator numberGenerator;
 
         private Serializer bankSerializer;
 
-        public InvoiceListener(int port, IEncoderService encoderService, IInvoiceRepository _invoices, IInvoiceService _invoiceService, IGeneratorId _invoiceGeneratorId, IGeneratorNumberInvoice _generatorNumberInvoice) : base(port, encoderService)
+        public InvoiceListener(int port, IEncoderService encoderService, IInvoiceRepository _invoices, IUserRepository _users,  IInvoiceService _invoiceService, IBaseGenerator _numberGenerator) : base(port, encoderService)
         {
             invoices = _invoices;
+            users = _users;
             invoiceService = _invoiceService;
-            invoiceGeneratorId = _invoiceGeneratorId;
-            generatorNumberInvoice = _generatorNumberInvoice;
+            numberGenerator = _numberGenerator;
 
             bankSerializer = new();
         }
@@ -41,7 +41,7 @@ namespace BankServer.Listeners
 
                     if (request.Path == "add")
                     {
-                        response = await invoiceService.AddInvoice(invoices, request.Data, generatorNumberInvoice, invoiceGeneratorId);
+                        response = await invoiceService.AddInvoice(invoices, users, request.Data, numberGenerator);
                         await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<IEnumerable<InvoiceModel>>>(response));
 
                     }
@@ -56,7 +56,7 @@ namespace BankServer.Listeners
 
                         if(invoiceRequest.Path == "delete")
                         {
-                            response = await invoiceService.DeleteInvoice(invoices, invoiceRequest.Data, request.Data);
+                            response = await invoiceService.DeleteInvoice(invoices, invoiceRequest.Data, request.Data, numberGenerator);
                             await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<IEnumerable<InvoiceModel>>>(response));
                         }
                         else
