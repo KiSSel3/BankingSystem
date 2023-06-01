@@ -1,6 +1,7 @@
-﻿using BankServer.Interfaces;
+﻿using BankServer.DataBase;
+using BankServer.Interfaces;
 using BankServer.Models;
-
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,22 @@ namespace BankServer.Repository
 {
     public class TransactionRepository : ITransactionRepository
     {
-        //Временно лист
-        private List<TransactionModel> transactions = new();
+        private readonly AppDbContext dbContext;
+        public TransactionRepository(AppDbContext DbContext)
+        {
+            dbContext = DbContext;
+
+            dbContext.Database.EnsureCreated();
+            dbContext.Transactions.Load();
+        }
 
         public async Task<bool> Create(TransactionModel item)
         {
             try
             {
-                transactions.Add(item);
+                await dbContext.Transactions.AddAsync(item);
+                await dbContext.SaveChangesAsync();
+
                 return true;
             }
             catch
@@ -32,7 +41,9 @@ namespace BankServer.Repository
         {
             try
             {
-                transactions.Remove(item);
+                dbContext.Transactions.Remove(item);
+                await dbContext.SaveChangesAsync();
+
                 return true;
             }
             catch
@@ -43,28 +54,29 @@ namespace BankServer.Repository
 
         public async Task<TransactionModel?> GetById(ulong id)
         {
-            return transactions.FirstOrDefault(item => item.Id == id, null);
+            return await dbContext.Transactions.FirstOrDefaultAsync(item => item.Id == id);
         }
 
         public async Task<IEnumerable<TransactionModel>> GetByRecipient(InvoiceModel recipient)
         {
-            return transactions.Where(item => item.Recipient == recipient);
+            return  dbContext.Transactions.Where(item => item.Recipient == recipient);
         }
 
         public async Task<IEnumerable<TransactionModel>> GetBySender(InvoiceModel sender)
         {
-            return transactions.Where(item => item.Sender == sender);
+            return  dbContext.Transactions.Where(item => item.Sender == sender);
         }
 
         public async Task<IEnumerable<TransactionModel>> Select()
         {
-            return transactions;
+            return await dbContext.Transactions.ToListAsync();
         }
 
         public async Task<TransactionModel> Update(TransactionModel item)
         {
-            await Delete(await GetById(item.Id));
-            await Create(item);
+            dbContext.Transactions.Update(item);
+            await dbContext.SaveChangesAsync();
+
             return item;
         }
     }

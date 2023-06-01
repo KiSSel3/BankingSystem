@@ -22,7 +22,7 @@ namespace BankServer.Listeners
         {
             encoderService = _encoderService;
 
-            listener = new TcpListener(IPAddress.Any, port);
+            listener = new TcpListener(IPAddress.Loopback, port);
             cancellationTokenSource = new CancellationTokenSource();
 
             bankSerializer = new();

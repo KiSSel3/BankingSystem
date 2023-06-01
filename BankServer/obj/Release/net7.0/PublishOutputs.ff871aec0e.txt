@@ -1,0 +1,7 @@
+C:\Users\User\Desktop\ServerForBankApp\BankServer.exe
+C:\Users\User\Desktop\ServerForBankApp\BankServer.dll
+C:\Users\User\Desktop\ServerForBankApp\BankServer.deps.json
+C:\Users\User\Desktop\ServerForBankApp\BankServer.runtimeconfig.json
+C:\Users\User\Desktop\ServerForBankApp\BankServer.pdb
+C:\Users\User\Desktop\ServerForBankApp\BankSerializer.dll
+C:\Users\User\Desktop\ServerForBankApp\BankSerializer.pdb

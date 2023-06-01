@@ -1,0 +1,7 @@
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankServer\bin\Release\net7.0\publish\BankServer.exe
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankServer\bin\Release\net7.0\publish\BankServer.dll
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankServer\bin\Release\net7.0\publish\BankServer.deps.json
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankServer\bin\Release\net7.0\publish\BankServer.runtimeconfig.json
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankServer\bin\Release\net7.0\publish\BankServer.pdb
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankServer\bin\Release\net7.0\publish\BankSerializer.dll
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankServer\bin\Release\net7.0\publish\BankSerializer.pdb

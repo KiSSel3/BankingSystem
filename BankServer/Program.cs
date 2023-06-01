@@ -1,14 +1,22 @@
-﻿using BankServer.Serever;
-using BankServer.Repository;
-using BankServer.Models;
-using BankServer.Services;
+﻿using BankServer.DataBase;
 using BankServer.Generators;
+using BankServer.Repository;
+using BankServer.Serever;
+using BankServer.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System.Reflection;
 
 public class Program
 {
     private static void Main(string[] args)
     {
-        Bank bank = new Bank(new UserRepository(), new InvoiceRepository(), new TransactionRepository(),
+        var dataBase = new AppDbContext();
+
+
+        Bank bank = new Bank(new UserRepository(dataBase), new InvoiceRepository(dataBase), new TransactionRepository(dataBase),
             new InvoiceService(), new TransactionService(), new RegistrationService(), new AuthorizationService(),
             new BaseGeneratorId(), new BaseGeneratorId(), new BaseGeneratorId(),
             new GeneratorNumberInvoice(),
