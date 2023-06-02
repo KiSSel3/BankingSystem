@@ -56,6 +56,16 @@ namespace BankServer.Repository
             return await dbContext.Users.FirstOrDefaultAsync(item => item.Name == name);
         }
 
+        public async Task<UserModel> Normalization(UserModel item)
+        {
+           var dbUserModel = await dbContext.Users.FirstOrDefaultAsync(dbItem => dbItem.Equals(item));
+
+            if (dbUserModel is not null)
+                return dbUserModel;
+
+            return item;
+        }
+
         public async Task<IEnumerable<UserModel>> Select()
         {
             return await dbContext.Users.ToListAsync();

@@ -2,24 +2,15 @@
 using BankServer.Models;
 using BankServer.Response;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace BankServer.Services
 {
     public class InvoiceService : IInvoiceService
     {
-        public async Task<BaseResponse<IEnumerable<InvoiceModel>>> AddInvoice(IInvoiceRepository invoices, IUserRepository users, UserModel user, IBaseGenerator numberGenerator)
+        public async Task<BaseResponse<IEnumerable<InvoiceModel>>> AddInvoice(IInvoiceRepository invoices, UserModel user, IBaseGenerator numberGenerator)
         {
             try
             {
-                var dbUser = await users.GetById(user.Id);
-
-                await invoices.Create(new InvoiceModel(dbUser, numberGenerator.GetNextValue()));
+                await invoices.Create(new InvoiceModel(user, numberGenerator.GetNextValue()));
                 return new BaseResponse<IEnumerable<InvoiceModel>>(true, await invoices.GetByUser(user));
             }
             catch

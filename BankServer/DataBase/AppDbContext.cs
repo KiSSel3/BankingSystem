@@ -19,17 +19,20 @@ namespace BankServer.DataBase
             modelBuilder.Entity<InvoiceModel>()
                 .HasOne<UserModel>(i => i.InvoiceUser)
                 .WithMany()
-                .HasForeignKey(i => i.InvoiceUserId);
+                .HasForeignKey(i => i.InvoiceUserId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<TransactionModel>()
                 .HasOne<InvoiceModel>(t => t.Sender)
                 .WithMany()
-                .HasForeignKey(t => t.SenderId);
+                .HasForeignKey(t => t.SenderId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<TransactionModel>()
                 .HasOne<InvoiceModel>(t => t.Recipient)
                 .WithMany()
-                .HasForeignKey(t => t.RecipientId);
+                .HasForeignKey(t => t.RecipientId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
 
     }

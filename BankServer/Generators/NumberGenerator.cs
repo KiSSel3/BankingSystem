@@ -26,6 +26,8 @@ namespace BankServer.Generators
         {
             var numberString = item.Replace(" ", "");
             freeItems.Add(Convert.ToUInt64(numberString));
+
+            SaveData();
         }
 
         public string GetCurrentValue()
@@ -39,16 +41,15 @@ namespace BankServer.Generators
             {
                 var number = freeItems.First();
                 freeItems.RemoveAt(0);
+                SaveData();
 
                 return string.Format("{0:0000 0000 0000 0000}", number);
             }
 
-            return string.Format("{0:0000 0000 0000 0000}", ++currentNumber);
-        }
-
-        ~NumberGenerator()
-        {
+            ++currentNumber;
             SaveData();
+
+            return string.Format("{0:0000 0000 0000 0000}", currentNumber);
         }
 
         private void SaveData()
@@ -74,9 +75,10 @@ namespace BankServer.Generators
             var data = text.Split("CURRENTNUMBER");
 
 
-
-            freeItems = serializer.DeSerializeJSONList<List<ulong>>(data[0]) as List<ulong>;
-            if(freeItems is null)
+            Console.WriteLine("do");
+            freeItems = serializer.DeSerializeJSON<List<ulong>>(data[0]);
+            Console.WriteLine("posle");
+            if (freeItems is null)
             {
                 freeItems = new();
             }
