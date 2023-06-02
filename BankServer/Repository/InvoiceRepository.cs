@@ -69,6 +69,16 @@ namespace BankServer.Repository
             return dbContext.Invoices.Where(item => item.InvoiceUser.Equals(user));
         }
 
+        public async Task<InvoiceModel> Normalization(InvoiceModel item)
+        {
+            var dbInvoice = await dbContext.Invoices.FirstOrDefaultAsync(dbItem => dbItem.Equals(item));
+
+            if (dbInvoice is not null)
+                return dbInvoice;
+
+            return item;
+        }
+
         public async Task<IEnumerable<InvoiceModel>> Select()
         {
             return await dbContext.Invoices.ToListAsync();

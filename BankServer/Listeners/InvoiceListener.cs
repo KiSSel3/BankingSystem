@@ -38,10 +38,12 @@ namespace BankServer.Listeners
                 try
                 {
                     var request = bankSerializer.DeSerializeXML<BaseRequest<UserModel>>(GetRequest());
+                    request.Data = await users.Normalization(request.Data);
+
 
                     if (request.Path == "add")
                     {
-                        response = await invoiceService.AddInvoice(invoices, users, request.Data, numberGenerator);
+                        response = await invoiceService.AddInvoice(invoices, request.Data, numberGenerator);
                         await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<IEnumerable<InvoiceModel>>>(response));
 
                     }
@@ -53,6 +55,7 @@ namespace BankServer.Listeners
                     else if (request.Path == "delete")
                     {
                         var invoiceRequest = bankSerializer.DeSerializeXML<BaseRequest<InvoiceModel>>(GetRequest());
+                        invoiceRequest.Data = await invoices.Normalization(invoiceRequest.Data);
 
                         if(invoiceRequest.Path == "delete")
                         {

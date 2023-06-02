@@ -15,5 +15,6 @@ namespace BankServer.Interfaces
         public Task<bool> Delete(Model item);
         public Task<Model?> GetById(ulong id);
         public Task<IEnumerable<Model>> Select();
+        public Task<Model> Normalization(Model item);
     }
 }

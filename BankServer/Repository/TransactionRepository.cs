@@ -59,12 +59,22 @@ namespace BankServer.Repository
 
         public async Task<IEnumerable<TransactionModel>> GetByRecipient(InvoiceModel recipient)
         {
-            return  dbContext.Transactions.Where(item => item.Recipient == recipient);
+            return  dbContext.Transactions.Where(item => item.Recipient.Equals(recipient));
         }
 
         public async Task<IEnumerable<TransactionModel>> GetBySender(InvoiceModel sender)
         {
-            return  dbContext.Transactions.Where(item => item.Sender == sender);
+            return  dbContext.Transactions.Where(item => item.Sender.Equals(sender));
+        }
+
+        public async Task<TransactionModel> Normalization(TransactionModel item)
+        {
+            var dbTransaction = await dbContext.Transactions.FirstOrDefaultAsync(dbItem => dbItem.Equals(item));
+
+            if (dbTransaction is not null)
+                return dbTransaction;
+
+            return item;
         }
 
         public async Task<IEnumerable<TransactionModel>> Select()

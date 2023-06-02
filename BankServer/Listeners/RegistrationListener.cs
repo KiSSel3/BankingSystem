@@ -29,6 +29,7 @@ namespace BankServer.Listeners
                 try
                 {
                     var request = bankSerializer.DeSerializeXML<BaseRequest<UserModel>>(GetRequest());
+                    request.Data = await users.Normalization(request.Data);
 
                     if (request.Path == "registration")
                     {
