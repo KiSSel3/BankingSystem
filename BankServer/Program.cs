@@ -3,6 +3,7 @@ using BankServer.Generators;
 using BankServer.Repository;
 using BankServer.Serever;
 using BankServer.Services;
+using Domain.Sevices;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

@@ -700,6 +700,12 @@
     <AppxPackagedFile Include="C:\Users\User\.nuget\packages\microsoft.windowsappsdk\1.2.221209.1\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\Serializer\BankSerializer\BankSerializer\bin\Debug\net7.0\BankSerializer.dll">
+      <PackagePath>BankSerializer.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\Domain\bin\Debug\net7.0\Domain.dll">
+      <PackagePath>Domain.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\BankClient.deps.json">
       <PackagePath>BankClient.deps.json</PackagePath>
     </AppxPackagedFile>
@@ -729,6 +735,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\Appetite.ttf">
+      <PackagePath>Appetite.ttf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -891,6 +900,21 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\login_page_background.scale-100.jpg">
       <PackagePath>login_page_background.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\login_page_background_first.scale-100.jpg">
+      <PackagePath>login_page_background_first.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\login_page_background_two.scale-100.jpg">
+      <PackagePath>login_page_background_two.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\lpg.scale-100.jpg">
+      <PackagePath>lpg.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\lpg_first.scale-100.jpg">
+      <PackagePath>lpg_first.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\lpg_two.scale-100.jpg">
+      <PackagePath>lpg_two.scale-100.jpg</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

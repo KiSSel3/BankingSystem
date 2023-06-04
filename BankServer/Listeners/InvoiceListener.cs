@@ -1,8 +1,9 @@
 ﻿using BankSerializer;
 using BankServer.Interfaces;
-using BankServer.Models;
-using BankServer.Request;
-using BankServer.Response;
+using Domain.Models;
+using Domain.Request;
+using Domain.Response;
+using Domain.Interfaces;
 
 using System.Net.Sockets;
 

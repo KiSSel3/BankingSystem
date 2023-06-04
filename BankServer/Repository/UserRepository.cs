@@ -1,6 +1,6 @@
 ﻿using BankServer.DataBase;
 using BankServer.Interfaces;
-using BankServer.Models;
+using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BankServer.Repository

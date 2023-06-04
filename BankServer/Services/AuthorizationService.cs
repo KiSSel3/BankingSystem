@@ -1,6 +1,6 @@
 ﻿using BankServer.Interfaces;
-using BankServer.Models;
-using BankServer.Response;
+using Domain.Models;
+using Domain.Response;
 
 using System;
 using System.Collections.Generic;

@@ -29,25 +29,25 @@
     <AppXManifest Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-06-03T18:20:20.892</Modified>
+      <Modified>2023-06-04T00:08:03.641</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-06-03T18:20:18.477</Modified>
+      <Modified>2023-06-04T00:07:59.800</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\BankClient.runtimeconfig.json">
       <PackagePath>BankClient.runtimeconfig.json</PackagePath>
-      <Modified>2023-06-03T18:10:22.745</Modified>
+      <Modified>2023-06-03T23:17:29.800</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\BankClient.dll">
       <PackagePath>BankClient.dll</PackagePath>
-      <Modified>2023-06-03T18:20:08.106</Modified>
+      <Modified>2023-06-04T00:07:46.626</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>BankClient.exe</PackagePath>
-      <Modified>2023-06-03T18:20:08.841</Modified>
+      <Modified>2023-06-04T00:07:47.507</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.3\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -933,9 +933,17 @@
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
       <Modified>2022-11-08T19:31:24.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\Serializer\BankSerializer\BankSerializer\bin\Debug\net7.0\BankSerializer.dll">
+      <PackagePath>BankSerializer.dll</PackagePath>
+      <Modified>2023-06-03T23:13:00.651</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\Domain\bin\Debug\net7.0\Domain.dll">
+      <PackagePath>Domain.dll</PackagePath>
+      <Modified>2023-06-03T23:37:15.545</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\BankClient.deps.json">
       <PackagePath>BankClient.deps.json</PackagePath>
-      <Modified>2023-06-03T18:20:20.242</Modified>
+      <Modified>2023-06-04T00:08:02.863</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\7.0.59\ref\net7.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -955,23 +963,27 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2023-06-03T18:19:42.719</Modified>
+      <Modified>2023-06-03T23:15:43.341</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2023-06-03T18:19:42.959</Modified>
+      <Modified>2023-06-03T23:15:43.425</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2023-06-03T18:19:43.047</Modified>
+      <Modified>2023-06-03T23:15:43.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2023-06-03T18:19:43.189</Modified>
+      <Modified>2023-06-03T23:15:43.663</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2023-06-03T18:19:43.741</Modified>
+      <Modified>2023-06-03T23:15:44.437</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\Appetite.ttf">
+      <PackagePath>Appetite.ttf</PackagePath>
+      <Modified>2023-06-03T19:20:05.686</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -983,211 +995,231 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2023-06-03T18:19:44.409</Modified>
+      <Modified>2023-06-03T23:15:45.028</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.867</Modified>
+      <Modified>2023-06-03T23:15:46.180</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2023-06-03T18:19:46.265</Modified>
+      <Modified>2023-06-03T23:15:46.231</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2023-06-03T18:19:46.493</Modified>
+      <Modified>2023-06-03T23:15:46.274</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2023-06-03T18:19:46.570</Modified>
+      <Modified>2023-06-03T23:15:46.351</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2023-06-03T18:19:46.827</Modified>
+      <Modified>2023-06-03T23:15:46.725</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.133</Modified>
+      <Modified>2023-06-03T23:15:45.393</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.146</Modified>
+      <Modified>2023-06-03T23:15:45.411</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.200</Modified>
+      <Modified>2023-06-03T23:15:45.493</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.157</Modified>
+      <Modified>2023-06-03T23:15:45.428</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.169</Modified>
+      <Modified>2023-06-03T23:15:45.450</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2023-06-03T18:19:44.993</Modified>
+      <Modified>2023-06-03T23:15:45.271</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.004</Modified>
+      <Modified>2023-06-03T23:15:45.290</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.118</Modified>
+      <Modified>2023-06-03T23:15:45.383</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.022</Modified>
+      <Modified>2023-06-03T23:15:45.320</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.058</Modified>
+      <Modified>2023-06-03T23:15:45.350</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2023-06-03T18:19:44.548</Modified>
+      <Modified>2023-06-03T23:15:45.072</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2023-06-03T18:19:44.569</Modified>
+      <Modified>2023-06-03T23:15:45.087</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2023-06-03T18:19:44.616</Modified>
+      <Modified>2023-06-03T23:15:45.105</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2023-06-03T18:19:44.667</Modified>
+      <Modified>2023-06-03T23:15:45.123</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2023-06-03T18:19:44.733</Modified>
+      <Modified>2023-06-03T23:15:45.153</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2023-06-03T18:19:44.812</Modified>
+      <Modified>2023-06-03T23:15:45.171</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2023-06-03T18:19:44.931</Modified>
+      <Modified>2023-06-03T23:15:45.190</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2023-06-03T18:19:44.981</Modified>
+      <Modified>2023-06-03T23:15:45.252</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2023-06-03T18:19:44.943</Modified>
+      <Modified>2023-06-03T23:15:45.206</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2023-06-03T18:19:44.955</Modified>
+      <Modified>2023-06-03T23:15:45.224</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.427</Modified>
+      <Modified>2023-06-03T23:15:45.678</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.451</Modified>
+      <Modified>2023-06-03T23:15:45.699</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.471</Modified>
+      <Modified>2023-06-03T23:15:45.727</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.501</Modified>
+      <Modified>2023-06-03T23:15:45.767</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.571</Modified>
+      <Modified>2023-06-03T23:15:45.836</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.332</Modified>
+      <Modified>2023-06-03T23:15:45.581</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.348</Modified>
+      <Modified>2023-06-03T23:15:45.594</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.364</Modified>
+      <Modified>2023-06-03T23:15:45.608</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.379</Modified>
+      <Modified>2023-06-03T23:15:45.627</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.411</Modified>
+      <Modified>2023-06-03T23:15:45.657</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.235</Modified>
+      <Modified>2023-06-03T23:15:45.509</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.274</Modified>
+      <Modified>2023-06-03T23:15:45.522</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.285</Modified>
+      <Modified>2023-06-03T23:15:45.534</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.299</Modified>
+      <Modified>2023-06-03T23:15:45.549</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.317</Modified>
+      <Modified>2023-06-03T23:15:45.571</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.593</Modified>
+      <Modified>2023-06-03T23:15:45.858</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.622</Modified>
+      <Modified>2023-06-03T23:15:45.900</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.653</Modified>
+      <Modified>2023-06-03T23:15:45.948</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.700</Modified>
+      <Modified>2023-06-03T23:15:46.012</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2023-06-03T18:19:45.833</Modified>
+      <Modified>2023-06-03T23:15:46.146</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2023-06-03T18:19:44.421</Modified>
+      <Modified>2023-06-03T23:15:44.900</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2023-06-03T18:19:44.545</Modified>
+      <Modified>2023-06-03T23:15:45.036</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2023-06-03T18:19:44.592</Modified>
+      <Modified>2023-06-03T23:15:45.087</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2023-06-03T18:19:44.658</Modified>
+      <Modified>2023-06-03T23:15:45.166</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2023-06-03T18:19:44.835</Modified>
+      <Modified>2023-06-03T23:15:45.374</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\login_page_background.scale-100.jpg">
       <PackagePath>login_page_background.scale-100.jpg</PackagePath>
       <Modified>2023-06-03T17:55:09.205</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\login_page_background_first.scale-100.jpg">
+      <PackagePath>login_page_background_first.scale-100.jpg</PackagePath>
+      <Modified>2023-06-03T17:56:54.874</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\login_page_background_two.scale-100.jpg">
+      <PackagePath>login_page_background_two.scale-100.jpg</PackagePath>
+      <Modified>2023-06-03T17:57:22.579</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\lpg.scale-100.jpg">
+      <PackagePath>lpg.scale-100.jpg</PackagePath>
+      <Modified>2023-06-03T20:09:13.812</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\lpg_first.scale-100.jpg">
+      <PackagePath>lpg_first.scale-100.jpg</PackagePath>
+      <Modified>2023-06-03T21:46:19.463</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\lpg_two.scale-100.jpg">
+      <PackagePath>lpg_two.scale-100.jpg</PackagePath>
+      <Modified>2023-06-03T20:13:12.329</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

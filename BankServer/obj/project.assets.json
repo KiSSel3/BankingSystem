@@ -941,6 +941,16 @@
         "build": {
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
       }
     }
   },
@@ -2135,10 +2145,16 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Sqlite >= 7.0.5",
       "Microsoft.Extensions.Configuration.Json >= 7.0.0",
       "Microsoft.Extensions.Hosting >= 7.0.1"
@@ -2176,7 +2192,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\Domain\\Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

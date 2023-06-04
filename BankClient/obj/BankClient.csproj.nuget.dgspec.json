@@ -37,32 +37,32 @@
           "net7.0-android33.0": {
             "targetAlias": "net7.0-android",
             "projectReferences": {
-              "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\BankServer\\BankServer.csproj": {
-                "projectPath": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\BankServer\\BankServer.csproj"
+              "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\Domain\\Domain.csproj"
               }
             }
           },
           "net7.0-ios16.1": {
             "targetAlias": "net7.0-ios",
             "projectReferences": {
-              "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\BankServer\\BankServer.csproj": {
-                "projectPath": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\BankServer\\BankServer.csproj"
+              "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\Domain\\Domain.csproj"
               }
             }
           },
           "net7.0-maccatalyst16.1": {
             "targetAlias": "net7.0-maccatalyst",
             "projectReferences": {
-              "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\BankServer\\BankServer.csproj": {
-                "projectPath": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\BankServer\\BankServer.csproj"
+              "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\Domain\\Domain.csproj"
               }
             }
           },
           "net7.0-windows10.0.19041": {
             "targetAlias": "net7.0-windows10.0.19041.0",
             "projectReferences": {
-              "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\BankServer\\BankServer.csproj": {
-                "projectPath": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\BankServer\\BankServer.csproj"
+              "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\Domain\\Domain.csproj"
               }
             }
           }
@@ -473,14 +473,14 @@
         }
       }
     },
-    "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\BankServer\\BankServer.csproj": {
+    "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\BankServer\\BankServer.csproj",
-        "projectName": "BankServer",
-        "projectPath": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\BankServer\\BankServer.csproj",
+        "projectUniqueName": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\BankServer\\obj\\",
+        "outputPath": "D:\\Programming\\ThirdCourse\\OOP\\BankingSystem\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -513,20 +513,6 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore.Sqlite": {
-              "target": "Package",
-              "version": "[7.0.5, )"
-            },
-            "Microsoft.Extensions.Configuration.Json": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "Microsoft.Extensions.Hosting": {
-              "target": "Package",
-              "version": "[7.0.1, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

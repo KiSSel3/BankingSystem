@@ -11,6 +11,7 @@
         "dependencies": {
           "CommunityToolkit.Maui": "5.2.0",
           "CommunityToolkit.Mvvm": "8.2.0",
+          "Domain": "1.0.0",
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0",
@@ -20,6 +21,7 @@
           "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "7.0.59",
           "Microsoft.Windows.SDK.BuildTools": "10.0.22621.755",
           "Microsoft.WindowsAppSDK": "1.2.221209.1",
+          "BankSerializer": "1.0.0.0",
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "7.0.3",
           "runtimepack.Microsoft.Maui.Core.Runtime.win": "7.0.59",
           "runtimepack.Microsoft.Maui.Controls.Runtime.win": "7.0.59",
@@ -1034,6 +1036,19 @@
             "fileVersion": "7.0.22.51805"
           }
         }
+      },
+      "Domain/1.0.0": {
+        "runtime": {
+          "Domain.dll": {}
+        }
+      },
+      "BankSerializer/1.0.0.0": {
+        "runtime": {
+          "BankSerializer.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1193,6 +1208,16 @@
       "sha512": "sha512-7E0uB92Cx2sXR67HW9rMKJqDACdLuz9t3I3OwZUFDzAgwKXWuY6CYeRT/NiypHcyZO2be9+0H0w0M6fn7HQtgQ==",
       "path": "system.speech/7.0.0",
       "hashPath": "system.speech.7.0.0.nupkg.sha512"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BankSerializer/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   },
   "runtimes": {

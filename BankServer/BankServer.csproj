@@ -15,6 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="BankSerializer">
       <HintPath>..\..\Serializer\BankSerializer\BankSerializer\bin\Debug\net7.0\BankSerializer.dll</HintPath>
     </Reference>

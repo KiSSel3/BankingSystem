@@ -61,11 +61,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Services\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\BankServer\BankServer.csproj" />
+	  <ProjectReference Include="..\Domain\Domain.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

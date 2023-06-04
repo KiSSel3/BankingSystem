@@ -1,8 +1,9 @@
 ﻿using BankServer.Generators;
 using BankServer.Interfaces;
 using BankServer.Listeners;
-using BankServer.Models;
+using Domain.Models;
 using BankServer.Services;
+using Domain.Interfaces;
 
 using System;
 using System.Collections.Generic;

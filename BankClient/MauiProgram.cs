@@ -1,8 +1,12 @@
-﻿using Microsoft.Extensions.Logging;
-
-using CommunityToolkit.Maui;
+﻿using Domain.Interfaces;
+using Domain.Sevices;
 using BankClient.Pages;
 using BankClient.ViewModels;
+
+using Microsoft.Extensions.Logging;
+using CommunityToolkit.Maui;
+using BankClient.Interfaces;
+using BankClient.Services;
 
 namespace BankClient
 {
@@ -37,6 +41,10 @@ namespace BankClient
 
             //ViewModels
             services.AddTransient<LoginViewModel>();
+
+            //Services
+            services.AddTransient<IEncoderService, EncoderService>();
+            services.AddTransient<IRegistrationService, RegistrationService>();
         }
     }
 }

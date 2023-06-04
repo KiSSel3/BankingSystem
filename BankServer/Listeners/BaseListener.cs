@@ -1,5 +1,6 @@
 ﻿using BankSerializer;
 using BankServer.Interfaces;
+using Domain.Interfaces;
 
 using System.Net;
 using System.Net.Sockets;
