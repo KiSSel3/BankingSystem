@@ -70,7 +70,7 @@ namespace BankServer.Repository
 
         public async Task<IEnumerable<TransactionModel>> GetByUser(UserModel user)
         {
-            return dbContext.Transactions.Where(item => item.Sender.InvoiceUserId.Equals(user.Id));
+            return dbContext.Transactions.Where(item => item.Sender.InvoiceUserId.Equals(user.Id) || item.Recipient.InvoiceUserId.Equals(user.Id));
         }
 
         public async Task<TransactionModel> Normalization(TransactionModel item)

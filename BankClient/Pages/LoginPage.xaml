@@ -9,10 +9,60 @@
              BackgroundImageSource="lpg_first.jpg"
              Title="Login">
 
-    <ScrollView>
-        <StackLayout HorizontalOptions="Center">
-            <Button Text="KiSSel" FontSize="55" FontAttributes="Bold" TextColor="Gainsboro" HorizontalOptions="Center" Margin="0,20,0,0" FontFamily="Appetite"  BackgroundColor="#00808080" BorderColor="#00808080"
+    <StackLayout HorizontalOptions="Center">
+        <Button Text="KiSSel" FontSize="55" FontAttributes="Bold" TextColor="Gainsboro" HorizontalOptions="Center" Margin="0,20,0,0" FontFamily="Appetite"  BackgroundColor="#00808080" BorderColor="#00808080"
                 Command="{Binding ChangeIpCommand}">
+            <Button.Triggers>
+                <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                    <Setter Property="Scale" Value="1.2" />
+                </Trigger>
+                <Trigger TargetType="Button" Property="IsPressed" Value="False">
+                    <Setter Property="Scale" Value="1" />
+                </Trigger>
+            </Button.Triggers>
+        </Button>
+        <Label Text="Bank" FontSize="45" FontAttributes="Bold" TextColor="Gainsboro" HorizontalOptions="Center" Margin="0,0,0,10" FontFamily="Appetite" />
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Margin="20,0,20,20" IsVisible="{Binding IsVisible}">
+            <Frame x:Name="ErrorMessageFrame" BackgroundColor="#af000000"  BorderColor="Red" HorizontalOptions="FillAndExpand" Padding="0,0,0,0">
+                <Label Text="{Binding ErrorMessage}" TextColor="Gainsboro" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <ImageButton Source="error.png" HeightRequest="60" WidthRequest="60" Command="{Binding HideErrorCommand}"/>
+        </StackLayout>
+
+
+        <Frame BackgroundColor="#af000000" Margin="20,0,20,0" BorderColor="Gainsboro">
+            <StackLayout Orientation="Vertical" Margin="5,0,5,0">
+                <Entry Placeholder="Surname:" Text="{Binding Username}" Margin="0,10,0,10" FontSize="18" FontAttributes="Italic" TextColor="Gainsboro">
+                    <Entry.Behaviors>
+                        <behaviors:FullNameBihavior />
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Entry Placeholder="Name:" Text="{Binding Surname}" Margin="0,10,0,10" FontSize="18" FontAttributes="Italic" TextColor="Gainsboro">
+                    <Entry.Behaviors>
+                        <behaviors:FullNameBihavior />
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Entry Placeholder="Father's name:" Text="{Binding FathersName}" Margin="0,10,0,10" FontSize="18" FontAttributes="Italic" TextColor="Gainsboro">
+                    <Entry.Behaviors>
+                        <behaviors:FullNameBihavior />
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Entry Placeholder="Password:" Text="{Binding Password}" Margin="0,10,0,10" FontSize="18" FontAttributes="Italic" TextColor="Gainsboro">
+                    <Entry.Behaviors>
+                        <behaviors:PasswordBihavior />
+                    </Entry.Behaviors>
+                </Entry>
+            </StackLayout>
+        </Frame>
+
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,70,10,0">
+            <Button Text="Registration" Margin="20,0,20,0" WidthRequest="135" BackgroundColor="#af000000" TextColor="Gainsboro" FontSize="17" FontAttributes="Bold" BorderColor="Gainsboro" BorderWidth="2" CornerRadius="10"
+                Command="{Binding RegisterCommand}">
                 <Button.Triggers>
                     <Trigger TargetType="Button" Property="IsPressed" Value="True">
                         <Setter Property="Scale" Value="1.2" />
@@ -22,70 +72,18 @@
                     </Trigger>
                 </Button.Triggers>
             </Button>
-            <Label Text="Bank" FontSize="45" FontAttributes="Bold" TextColor="Gainsboro" HorizontalOptions="Center" Margin="0,0,0,10" FontFamily="Appetite" />
 
-            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Margin="20,0,20,20" IsVisible="{Binding IsVisible}">
-                <Frame x:Name="ErrorMessageFrame" BackgroundColor="#af000000"  BorderColor="Red" HorizontalOptions="FillAndExpand" Padding="0,0,0,0">
-                    <Label Text="{Binding ErrorMessage}" TextColor="Gainsboro" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalTextAlignment="Center"/>
-                </Frame>
-                <ImageButton Source="error.png" HeightRequest="60" WidthRequest="60" Command="{Binding HideErrorCommand}"/>
-            </StackLayout>
-
-
-            <Frame BackgroundColor="#af000000" Margin="20,0,20,0" BorderColor="Gainsboro">
-                <StackLayout Orientation="Vertical" Margin="5,0,5,0">
-                    <Entry Placeholder="Surname:" Text="{Binding Username}" Margin="0,10,0,10" FontSize="18" FontAttributes="Italic" TextColor="Gainsboro">
-                        <Entry.Behaviors>
-                            <behaviors:FullNameBihavior />
-                        </Entry.Behaviors>
-                    </Entry>
-
-                    <Entry Placeholder="Name:" Text="{Binding Surname}" Margin="0,10,0,10" FontSize="18" FontAttributes="Italic" TextColor="Gainsboro">
-                        <Entry.Behaviors>
-                            <behaviors:FullNameBihavior />
-                        </Entry.Behaviors>
-                    </Entry>
-
-                    <Entry Placeholder="Father's name:" Text="{Binding FathersName}" Margin="0,10,0,10" FontSize="18" FontAttributes="Italic" TextColor="Gainsboro">
-                        <Entry.Behaviors>
-                            <behaviors:FullNameBihavior />
-                        </Entry.Behaviors>
-                    </Entry>
-
-                    <Entry Placeholder="Password:" Text="{Binding Password}" Margin="0,10,0,10" FontSize="18" FontAttributes="Italic" TextColor="Gainsboro">
-                        <Entry.Behaviors>
-                            <behaviors:PasswordBihavior />
-                        </Entry.Behaviors>
-                    </Entry>
-                </StackLayout>
-            </Frame>
-
-
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,70,10,0">
-                <Button Text="Registration" Margin="20,0,20,0" WidthRequest="135" BackgroundColor="#af000000" TextColor="Gainsboro" FontSize="17" FontAttributes="Bold" BorderColor="Gainsboro" BorderWidth="2" CornerRadius="10"
-                Command="{Binding RegisterCommand}">
-                    <Button.Triggers>
-                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
-                            <Setter Property="Scale" Value="1.2" />
-                        </Trigger>
-                        <Trigger TargetType="Button" Property="IsPressed" Value="False">
-                            <Setter Property="Scale" Value="1" />
-                        </Trigger>
-                    </Button.Triggers>
-                </Button>
-
-                <Button Text="Authorization" WidthRequest="135" BackgroundColor="#af000000" TextColor="Gainsboro" FontSize="17" FontAttributes="Bold" BorderColor="Gainsboro" BorderWidth="2" CornerRadius="10" 
+            <Button Text="Authorization" WidthRequest="135" BackgroundColor="#af000000" TextColor="Gainsboro" FontSize="17" FontAttributes="Bold" BorderColor="Gainsboro" BorderWidth="2" CornerRadius="10" 
                 Command="{Binding AuthorizationCommand}">
-                    <Button.Triggers>
-                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
-                            <Setter Property="Scale" Value="1.2" />
-                        </Trigger>
-                        <Trigger TargetType="Button" Property="IsPressed" Value="False">
-                            <Setter Property="Scale" Value="1" />
-                        </Trigger>
-                    </Button.Triggers>
-                </Button>
-            </StackLayout>
+                <Button.Triggers>
+                    <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                        <Setter Property="Scale" Value="1.2" />
+                    </Trigger>
+                    <Trigger TargetType="Button" Property="IsPressed" Value="False">
+                        <Setter Property="Scale" Value="1" />
+                    </Trigger>
+                </Button.Triggers>
+            </Button>
         </StackLayout>
-    </ScrollView>
+    </StackLayout>
 </ContentPage>

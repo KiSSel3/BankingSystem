@@ -16,7 +16,6 @@
             Command="{Binding LoadDataCommand}"/>
     </ContentPage.Behaviors>
 
-    <ScrollView>
         <StackLayout HorizontalOptions="Center">
 
             <Frame Padding="0" BackgroundColor="#00ffffff" BorderColor="#00ffffff">
@@ -124,5 +123,4 @@
                 </ScrollView>
             </Frame>
         </StackLayout>
-    </ScrollView>
 </ContentPage>

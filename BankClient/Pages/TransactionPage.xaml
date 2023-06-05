@@ -15,77 +15,75 @@
             Command="{Binding LoadDataCommand}"/>
     </ContentPage.Behaviors>
 
-    <ScrollView>
-        <StackLayout HorizontalOptions="Center">
-            <Frame BackgroundColor="#80ffffff" Margin="20,0,20,0" BorderColor="Gainsboro" HorizontalOptions="Center">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0">
-                    <Label Text="$" FontSize="45" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center" Margin="0,0,0,10" FontFamily="Appetite"  Padding="0"/>
-                    <Label Text="{Binding CurrentInvoice.Balanse}" FontSize="45" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center" Margin="0,0,0,0" FontFamily="Appetite" Padding="0" />
-                </StackLayout>
-            </Frame>
-
-            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Margin="20,20,20,20" IsVisible="{Binding IsVisibleError}">
-                <Frame x:Name="ErrorMessageFrame" BackgroundColor="#00ffffff" BorderColor="Red" HorizontalOptions="FillAndExpand" Padding="0,0,0,0">
-                    <Label Text="{Binding ErrorMessage}" TextColor="Gainsboro" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalTextAlignment="Center"/>
-                </Frame>
-                <ImageButton Source="error.png" HeightRequest="60" WidthRequest="60" Command="{Binding HideErrorCommand}"/>
+    <StackLayout HorizontalOptions="Center">
+        <Frame BackgroundColor="#80ffffff" Margin="20,0,20,0" BorderColor="Gainsboro" HorizontalOptions="Center">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0">
+                <Label Text="$" FontSize="45" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center" Margin="0,0,0,10" FontFamily="Appetite"  Padding="0"/>
+                <Label Text="{Binding CurrentInvoice.Balanse}" FontSize="45" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center" Margin="0,0,0,0" FontFamily="Appetite" Padding="0" />
             </StackLayout>
+        </Frame>
 
-            <Frame BackgroundColor="#80ffffff" Margin="10,0,10,0" BorderColor="White" Padding="0" CornerRadius="20" HeightRequest="70">
-                <StackLayout Orientation="Horizontal" Spacing="15" HorizontalOptions="Center" Padding="0">
-                    <ImageButton Source="add.png" WidthRequest="50" HeightRequest="50" 
-                                 Command="{Binding TransactionCommand}">
-                        <ImageButton.Triggers>
-                            <Trigger TargetType="ImageButton" Property="IsPressed" Value="True">
-                                <Setter Property="Scale" Value="1.2" />
-                            </Trigger>
-                            <Trigger TargetType="ImageButton" Property="IsPressed" Value="False">
-                                <Setter Property="Scale" Value="1" />
-                            </Trigger>
-                        </ImageButton.Triggers>
-                    </ImageButton>
-
-                    <ImageButton Source="home.png" WidthRequest="50" HeightRequest="50"
-                                 Command="{Binding HomeCommand}">
-                        <ImageButton.Triggers>
-                            <Trigger TargetType="ImageButton" Property="IsPressed" Value="True">
-                                <Setter Property="Scale" Value="1.2" />
-                            </Trigger>
-                            <Trigger TargetType="ImageButton" Property="IsPressed" Value="False">
-                                <Setter Property="Scale" Value="1" />
-                            </Trigger>
-                        </ImageButton.Triggers>
-                    </ImageButton>
-                </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Margin="20,20,20,20" IsVisible="{Binding IsVisibleError}">
+            <Frame x:Name="ErrorMessageFrame" BackgroundColor="#00ffffff" BorderColor="Red" HorizontalOptions="FillAndExpand" Padding="0,0,0,0">
+                <Label Text="{Binding ErrorMessage}" TextColor="Gainsboro" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalTextAlignment="Center"/>
             </Frame>
-
-            <Frame BackgroundColor="#80ffffff" Margin="20,0,20,0" BorderColor="Gainsboro">
-                <StackLayout Orientation="Vertical" Margin="5,0,5,0">
-                    <Entry Placeholder="Recipint number:" PlaceholderColor="Black" Text="{Binding RecipientNumber}" Margin="0,10,0,10" FontSize="25" FontAttributes="Bold, Italic" TextColor="Black">
-                    </Entry>
-
-                    <Entry Placeholder="Amount:" Keyboard="Numeric" PlaceholderColor="Black" Text="{Binding Amount}" Margin="0,10,0,10" FontSize="25" FontAttributes="Bold, Italic" TextColor="Black">
-                    </Entry>
-                </StackLayout>
-            </Frame>
-
-
-            <Frame BackgroundColor="#80ffffff" Margin="20,20,20,0" BorderColor="Gainsboro" HorizontalOptions="Center" IsVisible="{Binding IsVisibleTransaction}">
-                <StackLayout Orientation="Vertical" Spacing="5" Padding="0" BackgroundColor="#00ffffff" >
-                    <HorizontalStackLayout >
-                        <Label Text= "Sender: " FontSize="25" FontFamily="Appetite" />
-                        <Label Text= "{Binding CurrentTransaction.Sender.InvoiceUser.Name}" FontSize="25" FontFamily="Appetite"/>
-                    </HorizontalStackLayout>
-                    <HorizontalStackLayout >
-                        <Label Text= "Recipient: " FontSize="25" FontFamily="Appetite" />
-                        <Label Text= "{Binding CurrentTransaction.Recipient.InvoiceUser.Name}" FontSize="25" FontFamily="Appetite"/>
-                    </HorizontalStackLayout>
-                    <HorizontalStackLayout >
-                        <Label Text= "Amount: $" FontSize="25" FontFamily="Appetite" />
-                        <Label Text= "{Binding CurrentTransaction.Amount}" FontSize="25" FontFamily="Appetite"/>
-                    </HorizontalStackLayout>
-                </StackLayout>
-            </Frame>
+            <ImageButton Source="error.png" HeightRequest="60" WidthRequest="60" Command="{Binding HideErrorCommand}"/>
         </StackLayout>
-    </ScrollView>
+
+        <Frame BackgroundColor="#80ffffff" Margin="10,0,10,0" BorderColor="White" Padding="0" CornerRadius="20" HeightRequest="70">
+            <StackLayout Orientation="Horizontal" Spacing="15" HorizontalOptions="Center" Padding="0">
+                <ImageButton Source="add.png" WidthRequest="50" HeightRequest="50" 
+                                 Command="{Binding TransactionCommand}">
+                    <ImageButton.Triggers>
+                        <Trigger TargetType="ImageButton" Property="IsPressed" Value="True">
+                            <Setter Property="Scale" Value="1.2" />
+                        </Trigger>
+                        <Trigger TargetType="ImageButton" Property="IsPressed" Value="False">
+                            <Setter Property="Scale" Value="1" />
+                        </Trigger>
+                    </ImageButton.Triggers>
+                </ImageButton>
+
+                <ImageButton Source="home.png" WidthRequest="50" HeightRequest="50"
+                                 Command="{Binding HomeCommand}">
+                    <ImageButton.Triggers>
+                        <Trigger TargetType="ImageButton" Property="IsPressed" Value="True">
+                            <Setter Property="Scale" Value="1.2" />
+                        </Trigger>
+                        <Trigger TargetType="ImageButton" Property="IsPressed" Value="False">
+                            <Setter Property="Scale" Value="1" />
+                        </Trigger>
+                    </ImageButton.Triggers>
+                </ImageButton>
+            </StackLayout>
+        </Frame>
+
+        <Frame BackgroundColor="#80ffffff" Margin="20,0,20,0" BorderColor="Gainsboro">
+            <StackLayout Orientation="Vertical" Margin="5,0,5,0">
+                <Entry Placeholder="Recipint number:" PlaceholderColor="Black" Text="{Binding RecipientNumber}" Margin="0,10,0,10" FontSize="25" FontAttributes="Bold, Italic" TextColor="Black">
+                </Entry>
+
+                <Entry Placeholder="Amount:" Keyboard="Numeric" PlaceholderColor="Black" Text="{Binding Amount}" Margin="0,10,0,10" FontSize="25" FontAttributes="Bold, Italic" TextColor="Black">
+                </Entry>
+            </StackLayout>
+        </Frame>
+
+
+        <Frame BackgroundColor="#80ffffff" Margin="20,20,20,0" BorderColor="Gainsboro" HorizontalOptions="Center" IsVisible="{Binding IsVisibleTransaction}">
+            <StackLayout Orientation="Vertical" Spacing="5" Padding="0" BackgroundColor="#00ffffff" >
+                <HorizontalStackLayout >
+                    <Label Text= "Sender: " FontSize="25" FontFamily="Appetite" />
+                    <Label Text= "{Binding CurrentTransaction.Sender.InvoiceUser.Name}" FontSize="25" FontFamily="Appetite"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout >
+                    <Label Text= "Recipient: " FontSize="25" FontFamily="Appetite" />
+                    <Label Text= "{Binding CurrentTransaction.Recipient.InvoiceUser.Name}" FontSize="25" FontFamily="Appetite"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout >
+                    <Label Text= "Amount: $" FontSize="25" FontFamily="Appetite" />
+                    <Label Text= "{Binding CurrentTransaction.Amount}" FontSize="25" FontFamily="Appetite"/>
+                </HorizontalStackLayout>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
 </ContentPage>
