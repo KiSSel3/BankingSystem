@@ -29,13 +29,13 @@
     <AppXManifest Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-06-05T12:04:23.378</Modified>
+      <Modified>2023-06-05T16:10:50.519</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-06-05T12:04:21.658</Modified>
+      <Modified>2023-06-05T16:01:52.305</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\BankClient.runtimeconfig.json">
       <PackagePath>BankClient.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\BankClient.dll">
       <PackagePath>BankClient.dll</PackagePath>
-      <Modified>2023-06-05T12:04:11.460</Modified>
+      <Modified>2023-06-05T16:10:36.136</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>BankClient.exe</PackagePath>
-      <Modified>2023-06-05T12:04:12.031</Modified>
+      <Modified>2023-06-05T16:10:37.300</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.3\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -943,7 +943,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\BankClient.deps.json">
       <PackagePath>BankClient.deps.json</PackagePath>
-      <Modified>2023-06-05T12:04:22.701</Modified>
+      <Modified>2023-06-05T16:10:48.811</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\7.0.59\ref\net7.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>

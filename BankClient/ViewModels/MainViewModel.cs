@@ -19,9 +19,18 @@ namespace BankClient.ViewModels
     {
         private IInvoiceService invoiceService;
         private string ipAdress;
+
+        private Timer timer;
         public MainViewModel(IInvoiceService _invoiceService) 
         {
             invoiceService = _invoiceService;
+
+            //timer = new Timer(TimerElapsed, null, TimeSpan.Zero, TimeSpan.FromSeconds(30));
+        }
+
+        private async void TimerElapsed(object state)
+        {
+            await LoadData();
         }
 
         private string firstName;
@@ -135,6 +144,22 @@ namespace BankClient.ViewModels
         {
             await Shell.Current.Navigation.PopAsync();
         }
+
+        [RelayCommand]
+        private async void OnHistory() => await History();
+
+        private async Task History()
+        {
+            IDictionary<string, object> parameters =
+            new Dictionary<string, object>()
+            {
+                {"UserModel", CurrentUser },
+                {"IpAdress", ipAdress }
+            };
+
+            await Shell.Current.GoToAsync(nameof(HistoryPage), parameters);
+        }
+
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
             CurrentUser = query["User"] as UserModel;

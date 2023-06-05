@@ -56,7 +56,8 @@
                         </ImageButton.Triggers>
                     </ImageButton>
 
-                    <ImageButton Source="history.png" WidthRequest="50" HeightRequest="50" >
+                    <ImageButton Source="history.png" WidthRequest="50" HeightRequest="50" 
+                                 Command="{Binding HistoryCommand}">
                         <ImageButton.Triggers>
                             <Trigger TargetType="ImageButton" Property="IsPressed" Value="True">
                                 <Setter Property="Scale" Value="1.2" />
@@ -69,17 +70,6 @@
 
                     <ImageButton Source="reload.png" WidthRequest="50" HeightRequest="50" 
                                  Command="{Binding LoadDataCommand}">
-                        <ImageButton.Triggers>
-                            <Trigger TargetType="ImageButton" Property="IsPressed" Value="True">
-                                <Setter Property="Scale" Value="1.2" />
-                            </Trigger>
-                            <Trigger TargetType="ImageButton" Property="IsPressed" Value="False">
-                                <Setter Property="Scale" Value="1" />
-                            </Trigger>
-                        </ImageButton.Triggers>
-                    </ImageButton>
-
-                    <ImageButton Source="change.png"  WidthRequest="50" HeightRequest="50">
                         <ImageButton.Triggers>
                             <Trigger TargetType="ImageButton" Property="IsPressed" Value="True">
                                 <Setter Property="Scale" Value="1.2" />

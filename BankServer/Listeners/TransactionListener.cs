@@ -63,7 +63,9 @@ namespace BankServer.Listeners
                     {
                         try
                         {
-                            var newResponse = await transactionService.HistoryByUser(transactions, request.Data.InvoiceUser);
+                            var newRequest = bankSerializer.DeSerializeXML<BaseRequest<UserModel>>(GetRequest());
+
+                            var newResponse = await transactionService.HistoryByUser(transactions, newRequest.Data);
                             await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<IEnumerable<TransactionModel>>>(newResponse));
                         }
                         catch

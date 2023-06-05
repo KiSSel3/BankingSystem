@@ -1,4 +1,6 @@
-﻿using BankServer.Interfaces;
+﻿using BankServer.Generators;
+using BankServer.Interfaces;
+using BankServer.Repository;
 using Domain.Models;
 using Domain.Response;
 
@@ -16,6 +18,25 @@ namespace BankServer.Services
             catch
             {
                 return new BaseResponse<IEnumerable<InvoiceModel>>(false, null);
+            }
+        }
+
+        public async Task<BaseResponse<InvoiceModel>> UpdateInvoice(IInvoiceRepository invoices, InvoiceModel invoice)
+        {
+            try
+            {
+                var wantedInvoice = await invoices.GetById(invoice.Id);
+
+                if (wantedInvoice is not null)
+                {
+                    return new BaseResponse<InvoiceModel>(true, wantedInvoice);
+                }
+
+                return new BaseResponse<InvoiceModel>(false, null);
+            }
+            catch
+            {
+                return new BaseResponse<InvoiceModel>(false, null);
             }
         }
 

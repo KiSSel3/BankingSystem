@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace BankClient.Services
 {
@@ -46,6 +47,20 @@ namespace BankClient.Services
                 var stream = client.GetStream();
 
                 await SendingMessageAsync(bankSerializer.SerializeXML<BaseRequest<InvoiceModel>>(new BaseRequest<InvoiceModel>("historyBySender", invoice)), stream);
+                return bankSerializer.DeSerializeJSON<BaseResponse<IEnumerable<TransactionModel>>>((GetRequest(stream)));
+            }
+        }
+
+        public async Task<BaseResponse<IEnumerable<TransactionModel>>> GetTransactionsByUser(UserModel user, string ipAdress, int port)
+        {
+            using (TcpClient client = new TcpClient())
+            {
+                client.Connect(ipAdress, port);
+                var stream = client.GetStream();
+
+                await SendingMessageAsync(bankSerializer.SerializeXML<BaseRequest<InvoiceModel>>(new BaseRequest<InvoiceModel>("historyByUser", null)), stream);
+                await SendingMessageAsync(bankSerializer.SerializeXML<BaseRequest<UserModel>>(new BaseRequest<UserModel>("historyByUser",user)), stream);
+
                 return bankSerializer.DeSerializeJSON<BaseResponse<IEnumerable<TransactionModel>>>((GetRequest(stream)));
             }
         }

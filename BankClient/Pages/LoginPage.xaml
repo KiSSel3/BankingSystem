@@ -6,7 +6,6 @@
              x:Class="BankClient.Pages.LoginPage"
              x:DataType="viewmodels:LoginViewModel"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="Black"
              BackgroundImageSource="lpg_first.jpg"
              Title="Login">
 

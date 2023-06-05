@@ -6,6 +6,7 @@ using Domain.Response;
 using Domain.Interfaces;
 
 using System.Net.Sockets;
+using System.Net;
 
 namespace BankServer.Listeners
 {
@@ -47,6 +48,21 @@ namespace BankServer.Listeners
                         response = await invoiceService.AddInvoice(invoices, request.Data, numberGenerator);
                         await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<IEnumerable<InvoiceModel>>>(response));
 
+                    }
+                    else if(request.Path == "update")
+                    {
+                        try
+                        {
+                            var invoiceRequest = bankSerializer.DeSerializeXML<BaseRequest<InvoiceModel>>(GetRequest());
+                            var newResponse = await invoiceService.UpdateInvoice(invoices, invoiceRequest.Data);
+
+                            await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<InvoiceModel>>(newResponse));
+                        }
+                        catch
+                        {
+                            var newResponse = new BaseResponse<InvoiceModel>(false, null);
+                            await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<InvoiceModel>>(newResponse));
+                        }
                     }
                     else if (request.Path == "get")
                     {

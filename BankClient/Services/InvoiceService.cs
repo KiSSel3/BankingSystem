@@ -57,5 +57,19 @@ namespace BankClient.Services
                 return bankSerializer.DeSerializeJSON<BaseResponse<IEnumerable<InvoiceModel>>>((GetRequest(stream)));
             }
         }
+
+        public async Task<BaseResponse<InvoiceModel>> UpdateInvoice(UserModel user, InvoiceModel invoice, string ipAdress, int port)
+        {
+            using (TcpClient client = new TcpClient())
+            {
+                client.Connect(ipAdress, port);
+                var stream = client.GetStream();
+
+                await SendingMessageAsync(bankSerializer.SerializeXML<BaseRequest<UserModel>>(new BaseRequest<UserModel>("update", user)), stream);
+                await SendingMessageAsync(bankSerializer.SerializeXML<BaseRequest<InvoiceModel>>(new BaseRequest<InvoiceModel>("update", invoice)), stream);
+
+                return bankSerializer.DeSerializeJSON<BaseResponse<InvoiceModel>>((GetRequest(stream)));
+            }
+        }
     }
 }

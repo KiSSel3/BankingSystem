@@ -40,11 +40,15 @@ namespace BankClient
             services.AddTransient<LoginPage>();
             services.AddTransient<MainPage>();
             services.AddTransient<InvoiceManagerPage>();
+            services.AddTransient<TransactionPage>();
+            services.AddTransient<HistoryPage>();
 
             //ViewModels
             services.AddTransient<LoginViewModel>();
             services.AddTransient<MainViewModel>();
             services.AddTransient<InvoiceManagerViewModel>();
+            services.AddTransient<TransactionViewModel>();
+            services.AddTransient<HistoryViewModel>();
 
             //Services
             services.AddSingleton<IEncoderService, EncoderService>();

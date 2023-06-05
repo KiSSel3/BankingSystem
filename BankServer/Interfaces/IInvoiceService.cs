@@ -17,5 +17,7 @@ namespace BankServer.Interfaces
 
         public Task<BaseResponse<IEnumerable<InvoiceModel>>> DeleteInvoice(IInvoiceRepository invoices, InvoiceModel invoice, UserModel user, IBaseGenerator generatorNumberInvoice);
 
+        public Task<BaseResponse<InvoiceModel>> UpdateInvoice(IInvoiceRepository invoices, InvoiceModel invoice);
+
     }
 }

@@ -1,25 +1,32 @@
 ﻿using BankClient.Interfaces;
+using BankClient.Pages;
 using CommunityToolkit.Mvvm.Input;
 using Domain.Models;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankClient.ViewModels
 {
     public partial class InvoiceManagerViewModel : IQueryAttributable, INotifyPropertyChanged
     {
         private ITransactionService transactionService;
+        private IInvoiceService invoiceService;
         private string ipAdress;
 
-        public InvoiceManagerViewModel(ITransactionService _transactionService)
+        private Timer timer;
+
+        public InvoiceManagerViewModel(ITransactionService _transactionService, IInvoiceService _invoiceService)
         {
             transactionService = _transactionService;
+            invoiceService = _invoiceService;
+
+            //timer = new Timer(TimerElapsed, null, TimeSpan.Zero, TimeSpan.FromSeconds(30));
+        }
+
+        private async void TimerElapsed(object state)
+        {
+            await LoadData();
         }
 
         public ObservableCollection<TransactionModel> Transactions { get; set; } = new();
@@ -40,6 +47,13 @@ namespace BankClient.ViewModels
         private async void OnLoadData() => await LoadData();
         private async Task LoadData()
         {
+            var invoiceResponse = await invoiceService.UpdateInvoice(CurrentInvoice.InvoiceUser, CurrentInvoice, ipAdress, 8080);
+
+            if (invoiceResponse.Status)
+            {
+                CurrentInvoice = invoiceResponse.Data;
+            }
+
             var response = await transactionService.GetTransactionsByInvoice(CurrentInvoice, ipAdress, 8083);
 
             if (response.Status)
@@ -57,8 +71,15 @@ namespace BankClient.ViewModels
         [RelayCommand]
         private async void OnCreateTransaction() => await CreateTransaction();
         private async Task CreateTransaction()
+
         {
-            //переход
+            IDictionary<string, object> parameters = new Dictionary<string, object>()
+                {
+                    { "Invoice", CurrentInvoice},
+                    { "IpAdress", ipAdress}
+                };
+
+            await Shell.Current.GoToAsync(nameof(TransactionPage), parameters);
         }
 
         [RelayCommand]
