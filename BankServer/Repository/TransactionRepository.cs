@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
@@ -65,6 +66,11 @@ namespace BankServer.Repository
         public async Task<IEnumerable<TransactionModel>> GetBySender(InvoiceModel sender)
         {
             return  dbContext.Transactions.Where(item => item.Sender.Equals(sender));
+        }
+
+        public async Task<IEnumerable<TransactionModel>> GetByUser(UserModel user)
+        {
+            return dbContext.Transactions.Where(item => item.Sender.InvoiceUserId.Equals(user.Id));
         }
 
         public async Task<TransactionModel> Normalization(TransactionModel item)

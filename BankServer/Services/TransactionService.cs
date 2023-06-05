@@ -2,29 +2,27 @@
 using Domain.Models;
 using Domain.Response;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-
 namespace BankServer.Services
 {
     public class TransactionService : ITransactionService
     {
-        public async Task<BaseResponse<IEnumerable<TransactionModel>>> History(ITransactionRepository transactions, InvoiceModel sender)
+        public async Task<BaseResponse<IEnumerable<TransactionModel>>> HistoryBySender(ITransactionRepository transactions, InvoiceModel sender)
         {
             try
             {
-                var history = await transactions.GetBySender(sender);
+                return new BaseResponse<IEnumerable<TransactionModel>>(true, await transactions.GetBySender(sender));
+            }
+            catch
+            {
+                return new BaseResponse<IEnumerable<TransactionModel>>(false, null);
+            }
+        }
 
-                if(history is not null)
-                {
-                    return new BaseResponse<IEnumerable<TransactionModel>> (true, history);
-                }
-
-                return new BaseResponse<IEnumerable<TransactionModel>> (false, null);
+        public async Task<BaseResponse<IEnumerable<TransactionModel>>> HistoryByUser(ITransactionRepository transactions, UserModel user)
+        {
+            try
+            {
+                return new BaseResponse<IEnumerable<TransactionModel>>(true, await transactions.GetByUser(user));
             }
             catch
             {
@@ -37,8 +35,8 @@ namespace BankServer.Services
             try
             {
                 var recipient = await invoices.GetByNumber(numberRecipient);
-                
-                if(recipient is not null)
+
+                if (recipient is not null)
                 {
                     sender.Balanse -= amount;
                     await invoices.Update(sender);

@@ -10,10 +10,10 @@ namespace Domain.Models
     public class TransactionModel : BaseModel
     {
         //Поля
-        public InvoiceModel? Sender { get; set; }
+        public InvoiceModel Sender { get; set; }
         public ulong SenderId { get; set; }
 
-        public InvoiceModel? Recipient { get; set; }
+        public InvoiceModel Recipient { get; set; }
         public ulong RecipientId { get; set; }
 
         public decimal Amount { get; set; }

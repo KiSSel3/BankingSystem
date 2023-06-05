@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:BankClient.ViewModels"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:entity="clr-namespace:Domain.Models;assembly=Domain"
+             x:Class="BankClient.Pages.InvoiceManagerPage"
+             x:DataType="viewmodels:InvoiceManagerViewModel"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="lpg_first.jpg"
+             Title="InvoiceManagerPage">
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior 
+            EventName="Loaded"
+            Command="{Binding LoadDataCommand}"/>
+    </ContentPage.Behaviors>
+
+    <ScrollView>
+        <StackLayout HorizontalOptions="Center">
+
+            <Frame Padding="0" BackgroundColor="#00ffffff" BorderColor="#00ffffff">
+                <StackLayout Orientation="Horizontal" Padding="0">
+                    <Frame HorizontalOptions="StartAndExpand" Padding="5,0,5,10" BackgroundColor="#80ffffff">
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="End">
+                            <Label Text="{Binding CurrentInvoice.Number}" FontSize="35" FontAttributes="Bold" FontFamily="Appetite" HorizontalOptions="Center"/>
+                            <ImageButton Source="bank.png" WidthRequest="50" HeightRequest="50"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Label Text="$" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                <Label Text="{Binding CurrentInvoice.Balanse}" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            </StackLayout>
+
+                            <BoxView HeightRequest="1" BackgroundColor="Black" />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="#80ffffff" Margin="10,0,10,0" BorderColor="White" Padding="0" CornerRadius="20" HeightRequest="70">
+                <StackLayout Orientation="Horizontal" Spacing="15" HorizontalOptions="Center" Padding="0">
+                    <ImageButton Source="add.png" WidthRequest="50" HeightRequest="50" >
+                        <ImageButton.Triggers>
+                            <Trigger TargetType="ImageButton" Property="IsPressed" Value="True">
+                                <Setter Property="Scale" Value="1.2" />
+                            </Trigger>
+                            <Trigger TargetType="ImageButton" Property="IsPressed" Value="False">
+                                <Setter Property="Scale" Value="1" />
+                            </Trigger>
+                        </ImageButton.Triggers>
+                    </ImageButton>
+
+                    <ImageButton Source="reload.png" WidthRequest="50" HeightRequest="50" 
+                                 Command="{Binding LoadDataCommand}">
+                        <ImageButton.Triggers>
+                            <Trigger TargetType="ImageButton" Property="IsPressed" Value="True">
+                                <Setter Property="Scale" Value="1.2" />
+                            </Trigger>
+                            <Trigger TargetType="ImageButton" Property="IsPressed" Value="False">
+                                <Setter Property="Scale" Value="1" />
+                            </Trigger>
+                        </ImageButton.Triggers>
+                    </ImageButton>
+
+                    <ImageButton Source="home.png" WidthRequest="50" HeightRequest="50"
+                                 Command="{Binding HomeCommand}">
+                        <ImageButton.Triggers>
+                            <Trigger TargetType="ImageButton" Property="IsPressed" Value="True">
+                                <Setter Property="Scale" Value="1.2" />
+                            </Trigger>
+                            <Trigger TargetType="ImageButton" Property="IsPressed" Value="False">
+                                <Setter Property="Scale" Value="1" />
+                            </Trigger>
+                        </ImageButton.Triggers>
+                    </ImageButton>
+                </StackLayout>
+            </Frame>
+
+            <Frame VerticalOptions="StartAndExpand" BackgroundColor="#00ffffff" Margin="5,0,5,20" BorderColor="White" Padding="0" CornerRadius="10">
+                <ScrollView>
+                    <CollectionView ItemsSource="{Binding Transactions}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="entity:TransactionModel">
+                                <Frame Margin="5" BackgroundColor="#00ffffff" Padding="5" BorderColor="#00ffffff">
+                                    <StackLayout Orientation="Vertical" Spacing="5" Padding="0" BackgroundColor="#00ffffff" >
+                                        <HorizontalStackLayout >
+                                            <Label Text= "Sender: " FontSize="25" FontFamily="Appetite" />
+                                            <Label Text= "{Binding Sender.InvoiceUser.Name}" FontSize="25" FontFamily="Appetite"/>
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout >
+                                            <Label Text= "Recipient: " FontSize="25" FontFamily="Appetite" />
+                                            <Label Text= "{Binding Recipient.InvoiceUser.Name}" FontSize="25" FontFamily="Appetite"/>
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout >
+                                            <Label Text= "Amount: $" FontSize="25" FontFamily="Appetite" />
+                                            <Label Text= "{Binding Amount}" FontSize="25" FontFamily="Appetite"/>
+                                        </HorizontalStackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

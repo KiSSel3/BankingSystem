@@ -46,11 +46,24 @@ namespace BankServer.Listeners
                         response = await transactionService.Transaction(transactions, invoices, request.Data, newRequest.Data.Item1, newRequest.Data.Item2);
                         await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<TransactionModel>>(response));
                     }
-                    else if (request.Path == "history")
+                    else if (request.Path == "historyBySender")
                     {
                         try
                         {
-                            var newResponse = await transactionService.History(transactions, request.Data);
+                            var newResponse = await transactionService.HistoryBySender(transactions, request.Data);
+                            await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<IEnumerable<TransactionModel>>>(newResponse));
+                        }
+                        catch
+                        {
+                            var newResponse = new BaseResponse<IEnumerable<TransactionModel>>(false, null);
+                            await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<IEnumerable<TransactionModel>>>(newResponse));
+                        }
+                    }
+                    else if (request.Path == "historyByUser")
+                    {
+                        try
+                        {
+                            var newResponse = await transactionService.HistoryByUser(transactions, request.Data.InvoiceUser);
                             await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<IEnumerable<TransactionModel>>>(newResponse));
                         }
                         catch

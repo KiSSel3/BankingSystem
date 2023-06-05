@@ -7,7 +7,7 @@ namespace BankClient
         public AppShell()
         {
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
-
+            Routing.RegisterRoute(nameof(InvoiceManagerPage), typeof(InvoiceManagerPage));
             InitializeComponent();
         }
     }

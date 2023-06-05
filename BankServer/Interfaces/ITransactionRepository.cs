@@ -13,5 +13,7 @@ namespace BankServer.Interfaces
     {
         public Task<IEnumerable<TransactionModel>> GetBySender(InvoiceModel sender);
         public Task<IEnumerable<TransactionModel>> GetByRecipient(InvoiceModel recipient);
+
+        public Task<IEnumerable<TransactionModel>> GetByUser(UserModel user);
     }
 }

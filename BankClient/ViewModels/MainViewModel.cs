@@ -1,4 +1,5 @@
 ﻿using BankClient.Interfaces;
+using BankClient.Pages;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Domain.Models;
@@ -14,7 +15,7 @@ using System.Web;
 
 namespace BankClient.ViewModels
 {
-    public partial class MainViewModel :IQueryAttributable, INotifyPropertyChanged
+    public partial class MainViewModel : IQueryAttributable, INotifyPropertyChanged
     {
         private IInvoiceService invoiceService;
         private string ipAdress;
@@ -112,6 +113,28 @@ namespace BankClient.ViewModels
             }
         }
 
+        [RelayCommand]
+        private async void OnInvoiceManager(InvoiceModel invoice) => await InvoiceManager(invoice);
+
+        private async Task InvoiceManager(InvoiceModel invoice)
+        {
+            IDictionary<string, object> parameters =
+            new Dictionary<string, object>()
+            {
+                {"Invoice", invoice },
+                {"IpAdress", ipAdress }
+            };
+
+            await Shell.Current.GoToAsync(nameof(InvoiceManagerPage), parameters);
+        }
+
+        [RelayCommand]
+        private async void OnHome() => await Home();
+
+        private async Task Home()
+        {
+            await Shell.Current.Navigation.PopAsync();
+        }
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
             CurrentUser = query["User"] as UserModel;

@@ -4,6 +4,29 @@
         <name>BankClient</name>
     </assembly>
     <members>
+        <member name="T:BankClient.ViewModels.InvoiceManagerViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:BankClient.ViewModels.InvoiceManagerViewModel.loadDataCommand">
+            <summary>The backing field for <see cref="P:BankClient.ViewModels.InvoiceManagerViewModel.LoadDataCommand"/>.</summary>
+        </member>
+        <member name="P:BankClient.ViewModels.InvoiceManagerViewModel.LoadDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:BankClient.ViewModels.InvoiceManagerViewModel.OnLoadData"/>.</summary>
+        </member>
+        <member name="F:BankClient.ViewModels.InvoiceManagerViewModel.createTransactionCommand">
+            <summary>The backing field for <see cref="P:BankClient.ViewModels.InvoiceManagerViewModel.CreateTransactionCommand"/>.</summary>
+        </member>
+        <member name="P:BankClient.ViewModels.InvoiceManagerViewModel.CreateTransactionCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:BankClient.ViewModels.InvoiceManagerViewModel.OnCreateTransaction"/>.</summary>
+        </member>
+        <member name="F:BankClient.ViewModels.InvoiceManagerViewModel.homeCommand">
+            <summary>The backing field for <see cref="P:BankClient.ViewModels.InvoiceManagerViewModel.HomeCommand"/>.</summary>
+        </member>
+        <member name="P:BankClient.ViewModels.InvoiceManagerViewModel.HomeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:BankClient.ViewModels.InvoiceManagerViewModel.OnHome"/>.</summary>
+        </member>
         <member name="T:BankClient.ViewModels.LoginViewModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -56,6 +79,8 @@
         <member name="T:BankClient.ViewModels.MainViewModel">
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="F:BankClient.ViewModels.MainViewModel.loadDataCommand">
             <summary>The backing field for <see cref="P:BankClient.ViewModels.MainViewModel.LoadDataCommand"/>.</summary>
@@ -68,6 +93,18 @@
         </member>
         <member name="P:BankClient.ViewModels.MainViewModel.CreateInvoiceCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:BankClient.ViewModels.MainViewModel.OnCreateInvoice"/>.</summary>
+        </member>
+        <member name="F:BankClient.ViewModels.MainViewModel.invoiceManagerCommand">
+            <summary>The backing field for <see cref="P:BankClient.ViewModels.MainViewModel.InvoiceManagerCommand"/>.</summary>
+        </member>
+        <member name="P:BankClient.ViewModels.MainViewModel.InvoiceManagerCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:BankClient.ViewModels.MainViewModel.OnInvoiceManager(Domain.Models.InvoiceModel)"/>.</summary>
+        </member>
+        <member name="F:BankClient.ViewModels.MainViewModel.homeCommand">
+            <summary>The backing field for <see cref="P:BankClient.ViewModels.MainViewModel.HomeCommand"/>.</summary>
+        </member>
+        <member name="P:BankClient.ViewModels.MainViewModel.HomeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:BankClient.ViewModels.MainViewModel.OnHome"/>.</summary>
         </member>
         <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
             <summary>

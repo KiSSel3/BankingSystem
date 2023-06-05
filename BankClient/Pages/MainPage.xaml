@@ -90,7 +90,8 @@
                         </ImageButton.Triggers>
                     </ImageButton>
 
-                    <ImageButton Source="home.png" WidthRequest="50" HeightRequest="50">
+                    <ImageButton Source="home.png" WidthRequest="50" HeightRequest="50"
+                                 Command="{Binding HomeCommand}">
                         <ImageButton.Triggers>
                             <Trigger TargetType="ImageButton" Property="IsPressed" Value="True">
                                 <Setter Property="Scale" Value="1.2" />
@@ -103,7 +104,7 @@
                 </StackLayout>
             </Frame>
 
-            <Frame VerticalOptions="StartAndExpand" BackgroundColor="#00ffffff" Margin="5,0,5,20" BorderColor="White" Padding="0" CornerRadius="10" HeightRequest="70">
+            <Frame VerticalOptions="StartAndExpand" BackgroundColor="#00ffffff" Margin="5,0,5,20" BorderColor="White" Padding="0" CornerRadius="10">
                 <ScrollView>
                     <CollectionView ItemsSource="{Binding Invoices}">
                         <CollectionView.ItemTemplate>
@@ -111,12 +112,18 @@
                                 <Frame Margin="5" BackgroundColor="#00ffffff" Padding="5" BorderColor="#00ffffff">
                                     <StackLayout Orientation="Horizontal" Spacing="5" Padding="0" BackgroundColor="#00ffffff" >
                                         <Frame HorizontalOptions="EndAndExpand" BackgroundColor="#80ffffff">
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:MainViewModel}}, Path=InvoiceManagerCommand}" CommandParameter="{Binding}"/>
+                                            </Frame.GestureRecognizers>
                                             <HorizontalStackLayout >
                                                 <Label Text= "$" FontSize="25" FontFamily="Appetite" />
                                                 <Label Text= "{Binding Balanse}" FontSize="25" FontFamily="Appetite"/>
                                             </HorizontalStackLayout>
                                         </Frame>
                                         <Frame HorizontalOptions="Start" BackgroundColor="#80ffffff" Padding="15,0,15,0">
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:MainViewModel}}, Path=InvoiceManagerCommand}" CommandParameter="{Binding}"/>
+                                            </Frame.GestureRecognizers>
                                             <Label Text= "{Binding Number}" FontSize="25"  FontFamily="Appetite" VerticalOptions="Center" HorizontalOptions="Center"/>
                                         </Frame>
                                     </StackLayout>
