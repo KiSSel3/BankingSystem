@@ -162,3 +162,10 @@ Microsoft.Maui.aar
 Microsoft.Maui.Essentials.aar
 SQLitePCLRaw.lib.e_sqlite3.android.aar
 Xamarin.Google.Crypto.Tink.Android.aar
+Acr.UserDialogs.dll
+AndHUD.dll
+AndHUD.aar
+FormsViewGroup.dll
+Rg.Plugins.Popup.dll
+Xamarin.Forms.Platform.Android.dll
+Xamarin.Forms.Platform.dll

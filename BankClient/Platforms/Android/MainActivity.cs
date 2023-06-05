@@ -10,6 +10,7 @@ namespace BankClient
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
             // Изменение цвета полоски StatusBar
             if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
             {

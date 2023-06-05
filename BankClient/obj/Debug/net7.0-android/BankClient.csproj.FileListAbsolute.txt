@@ -994,3 +994,13 @@ D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-android
 D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-android\stamp\_GenerateJavaStubs.stamp
 D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-android\stamp\_GeneratePackageManagerJava.stamp
 D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-android\stamp\_ResolveLibraryProjectImports.stamp
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-android\resizetizer\r\drawable\error.png
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-android\resizetizer\r\drawable\add.png
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-android\resizetizer\r\drawable\bank.png
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-android\resizetizer\r\drawable\change.png
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-android\resizetizer\r\drawable\history.png
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-android\resizetizer\r\drawable\home.png
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-android\resizetizer\r\drawable\main_page.jpg
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-android\resizetizer\r\drawable\main_page_space.jpg
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-android\resizetizer\r\drawable\user.png
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-android\resizetizer\r\drawable\reload.png

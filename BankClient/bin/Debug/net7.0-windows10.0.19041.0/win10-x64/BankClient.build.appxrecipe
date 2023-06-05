@@ -745,6 +745,9 @@
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
       <PackagePath>OpenSans-Semibold.ttf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\add.scale-100.png">
+      <PackagePath>add.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
     </AppxPackagedFile>
@@ -883,6 +886,12 @@
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\bank.scale-100.png">
+      <PackagePath>bank.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\change.scale-100.png">
+      <PackagePath>change.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -897,6 +906,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\error.scale-100.png">
+      <PackagePath>error.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\history.scale-100.png">
+      <PackagePath>history.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-100.png">
+      <PackagePath>home.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\login_page_background.scale-100.jpg">
       <PackagePath>login_page_background.scale-100.jpg</PackagePath>
@@ -915,6 +933,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\lpg_two.scale-100.jpg">
       <PackagePath>lpg_two.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\main_page.scale-100.jpg">
+      <PackagePath>main_page.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\main_page_space.scale-100.jpg">
+      <PackagePath>main_page_space.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\user.scale-100.png">
+      <PackagePath>user.scale-100.png</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

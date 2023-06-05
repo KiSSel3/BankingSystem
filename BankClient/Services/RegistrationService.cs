@@ -17,7 +17,7 @@ namespace BankClient.Services
 {
     public class RegistrationService : BaseService, IRegistrationService
     {
-        Serializer bankSerializer;
+        private Serializer bankSerializer;
 
         public RegistrationService(IEncoderService encoderService) : base(encoderService) 
         {

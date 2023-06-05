@@ -38,13 +38,18 @@ namespace BankClient
         {
             //Pages
             services.AddTransient<LoginPage>();
+            services.AddTransient<MainPage>();
 
             //ViewModels
             services.AddTransient<LoginViewModel>();
+            services.AddTransient<MainViewModel>();
 
             //Services
-            services.AddTransient<IEncoderService, EncoderService>();
+            services.AddSingleton<IEncoderService, EncoderService>();
+
             services.AddTransient<IRegistrationService, RegistrationService>();
+            services.AddTransient<IAuthorizationService, AuthorizationService>();
+            services.AddTransient<IInvoiceService, InvoiceService>();
         }
     }
 }

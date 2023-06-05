@@ -337,3 +337,12 @@ D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows
 D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\error.scale-100.png
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\add.scale-100.png
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\bank.scale-100.png
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\change.scale-100.png
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\history.scale-100.png
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-100.png
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\main_page.scale-100.jpg
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\main_page_space.scale-100.jpg
+D:\Programming\ThirdCourse\OOP\BankingSystem\BankClient\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\user.scale-100.png

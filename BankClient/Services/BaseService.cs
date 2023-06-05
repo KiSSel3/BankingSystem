@@ -12,7 +12,7 @@ namespace BankClient.Services
 {
     public abstract class BaseService
     {
-        protected IEncoderService encoderService;
+        private IEncoderService encoderService;
 
         public BaseService(IEncoderService _encoderService)
         {

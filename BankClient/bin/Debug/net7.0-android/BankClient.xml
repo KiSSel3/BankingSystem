@@ -8,6 +8,8 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:BankClient.ViewModels.LoginViewModel.Surname">
             <inheritdoc cref="F:BankClient.ViewModels.LoginViewModel.surname"/>
@@ -21,8 +23,11 @@
         <member name="P:BankClient.ViewModels.LoginViewModel.Password">
             <inheritdoc cref="F:BankClient.ViewModels.LoginViewModel.password"/>
         </member>
-        <member name="P:BankClient.ViewModels.LoginViewModel.IpAdress">
-            <inheritdoc cref="F:BankClient.ViewModels.LoginViewModel.ipAdress"/>
+        <member name="P:BankClient.ViewModels.LoginViewModel.IsVisible">
+            <inheritdoc cref="F:BankClient.ViewModels.LoginViewModel.isVisible"/>
+        </member>
+        <member name="P:BankClient.ViewModels.LoginViewModel.ErrorMessage">
+            <inheritdoc cref="F:BankClient.ViewModels.LoginViewModel.errorMessage"/>
         </member>
         <member name="F:BankClient.ViewModels.LoginViewModel.registerCommand">
             <summary>The backing field for <see cref="P:BankClient.ViewModels.LoginViewModel.RegisterCommand"/>.</summary>
@@ -35,6 +40,34 @@
         </member>
         <member name="P:BankClient.ViewModels.LoginViewModel.AuthorizationCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:BankClient.ViewModels.LoginViewModel.OnAuthorization"/>.</summary>
+        </member>
+        <member name="F:BankClient.ViewModels.LoginViewModel.changeIpCommand">
+            <summary>The backing field for <see cref="P:BankClient.ViewModels.LoginViewModel.ChangeIpCommand"/>.</summary>
+        </member>
+        <member name="P:BankClient.ViewModels.LoginViewModel.ChangeIpCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:BankClient.ViewModels.LoginViewModel.OnChangeIp"/>.</summary>
+        </member>
+        <member name="F:BankClient.ViewModels.LoginViewModel.hideErrorCommand">
+            <summary>The backing field for <see cref="P:BankClient.ViewModels.LoginViewModel.HideErrorCommand"/>.</summary>
+        </member>
+        <member name="P:BankClient.ViewModels.LoginViewModel.HideErrorCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:BankClient.ViewModels.LoginViewModel.OnHideError"/>.</summary>
+        </member>
+        <member name="T:BankClient.ViewModels.MainViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:BankClient.ViewModels.MainViewModel.loadDataCommand">
+            <summary>The backing field for <see cref="P:BankClient.ViewModels.MainViewModel.LoadDataCommand"/>.</summary>
+        </member>
+        <member name="P:BankClient.ViewModels.MainViewModel.LoadDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:BankClient.ViewModels.MainViewModel.OnLoadData"/>.</summary>
+        </member>
+        <member name="F:BankClient.ViewModels.MainViewModel.createInvoiceCommand">
+            <summary>The backing field for <see cref="P:BankClient.ViewModels.MainViewModel.CreateInvoiceCommand"/>.</summary>
+        </member>
+        <member name="P:BankClient.ViewModels.MainViewModel.CreateInvoiceCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:BankClient.ViewModels.MainViewModel.OnCreateInvoice"/>.</summary>
         </member>
         <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
             <summary>
@@ -153,8 +186,11 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Password">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Password" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IpAdress">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IpAdress" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ErrorMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ErrorMessage" generated properties.</summary>
         </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
@@ -174,8 +210,11 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Password">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Password" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IpAdress">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IpAdress" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ErrorMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ErrorMessage" generated properties.</summary>
         </member>
     </members>
 </doc>

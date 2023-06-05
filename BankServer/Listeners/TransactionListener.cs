@@ -1,10 +1,9 @@
 ﻿using BankSerializer;
 using BankServer.Interfaces;
+using Domain.Interfaces;
 using Domain.Models;
 using Domain.Request;
 using Domain.Response;
-using Domain.Interfaces;
-
 using System.Net.Sockets;
 
 
@@ -37,13 +36,28 @@ namespace BankServer.Listeners
 
                 try
                 {
-                    var request = bankSerializer.DeSerializeXML<BaseRequest<(InvoiceModel, string, decimal)>>(GetRequest());
-                    request.Data = (await invoices.Normalization(request.Data.Item1), request.Data.Item2, request.Data.Item3);
+                    var request = bankSerializer.DeSerializeXML<BaseRequest<InvoiceModel>>(GetRequest());
+                    request.Data = await invoices.Normalization(request.Data);
 
                     if (request.Path == "transaction")
                     {
-                        response = await transactionService.Transaction(transactions, invoices, request.Data.Item1, request.Data.Item2, request.Data.Item3);
+                        var newRequest = bankSerializer.DeSerializeXML<BaseRequest<(string, decimal)>>(GetRequest());
+
+                        response = await transactionService.Transaction(transactions, invoices, request.Data, newRequest.Data.Item1, newRequest.Data.Item2);
                         await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<TransactionModel>>(response));
+                    }
+                    else if (request.Path == "history")
+                    {
+                        try
+                        {
+                            var newResponse = await transactionService.History(transactions, request.Data);
+                            await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<IEnumerable<TransactionModel>>>(newResponse));
+                        }
+                        catch
+                        {
+                            var newResponse = new BaseResponse<IEnumerable<TransactionModel>>(false, null);
+                            await SendingMesageAsync(bankSerializer.SerializeJSON<BaseResponse<IEnumerable<TransactionModel>>>(newResponse));
+                        }
                     }
                     else
                     {
